@@ -5,6 +5,11 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    //---AUDIO SOURCES---//
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource m_BGMAudioSource;
+    [SerializeField] private AudioSource m_SFXAudioSource;
+
     //---SFX CLIPS---//
 
     [Header("SFX - Piano Keys")]
@@ -55,40 +60,40 @@ public class AudioManager : MonoBehaviour
         switch (key)
         {
             case 1:
-                Debug.Log("C key");
+                m_SFXAudioSource.PlayOneShot(m_CKey);
                 break;
             case 2:
-                Debug.Log("C#/Db key");
+                m_SFXAudioSource.PlayOneShot(m_CSharpDFlatKey);
                 break;
             case 3:
-                Debug.Log("D key");
+                m_SFXAudioSource.PlayOneShot(m_DKey);
                 break;
             case 4:
-                Debug.Log("D#/Eb key");
+                m_SFXAudioSource.PlayOneShot(m_DSharpEFlatKey);
                 break;
             case 5:
-                Debug.Log("E key");
+                m_SFXAudioSource.PlayOneShot(m_EKey);
                 break;
             case 6:
-                Debug.Log("F key");
+                m_SFXAudioSource.PlayOneShot(m_FKey);
                 break;
             case 7:
-                Debug.Log("F#/Gb key");
+                m_SFXAudioSource.PlayOneShot(m_FSharpGFlatKey);
                 break;
             case 8:
-                Debug.Log("G key");
+                m_SFXAudioSource.PlayOneShot(m_GKey);
                 break;
             case 9:
-                Debug.Log("G#/Ab key");
+                m_SFXAudioSource.PlayOneShot(m_GSharpAFlatKey);
                 break;
             case 10:
-                Debug.Log("A key");
+                m_SFXAudioSource.PlayOneShot(m_AKey);
                 break;
             case 11:
-                Debug.Log("A#/Bb key");
+                m_SFXAudioSource.PlayOneShot(m_ASharpBFlatKey);
                 break;
             case 12:
-                Debug.Log("B key");
+                m_SFXAudioSource.PlayOneShot(m_BKey);
                 break;
         }
     }
