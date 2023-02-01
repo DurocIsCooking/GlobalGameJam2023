@@ -57,11 +57,10 @@ public class PianoPuzzle : MonoBehaviour
 
     public void CheckSolution(int Key)
     {
-        if (Key == m_Solution1 && m_Solution2Check == false && m_Solution3Check == false)
+        if (Key == m_Solution1 || Key == m_Solution1Original && m_Solution2Check == false && m_Solution3Check == false)
         {
             m_Solution1Check = true;
             m_Solution1 = m_DummyNumber;
-            //Needs review. Clicking on the correct note multiple times at the beginning should not "toggle" the sequence of notes. 
         }
         else if (Key == m_Solution2 && m_Solution1Check == true && m_Solution2Check == false && m_Solution3Check == false)
         {
