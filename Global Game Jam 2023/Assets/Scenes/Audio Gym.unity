@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b97fa7a4c504b844bad5fb52d230775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BGMAudioSource: {fileID: 0}
+  m_BGMAudioSource: {fileID: 935190184}
   m_SFXAudioSource: {fileID: 935190187}
   m_CKey: {fileID: 8300000, guid: 865af2e40f6d7d74fb8746ba18dd3886, type: 3}
   m_CSharpDFlatKey: {fileID: 8300000, guid: 28aa71a61758c7f42ac56ed6d3f92b3a, type: 3}
