@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     [Header("BGM")]
     [SerializeField] private AudioClip m_BGMIntro;
     [SerializeField] private AudioClip m_BGMLoop;
+    [SerializeField] private AudioClip m_BGMFinal;
     private float m_BGMOriginalVolume;
 
     [SerializeField] private float m_FadeSpeed;
