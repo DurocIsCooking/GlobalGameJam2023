@@ -97,5 +97,7 @@ public class AudioManager : MonoBehaviour
                 m_SFXAudioSource.PlayOneShot(m_BKey);
                 break;
         }
+
+        PianoPuzzle.Instance.CheckSolution(key);
     }
 }
