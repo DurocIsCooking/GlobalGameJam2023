@@ -152,12 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e556a5cae30aa940807a63e6c069df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Solution1: 2
+  m_Solution1: 3
   m_Solution1Check: 0
-  m_Solution2: 2
+  m_Solution2: 5
   m_Solution2Check: 0
-  m_Solution3: 2
+  m_Solution3: 5
   m_Solution3Check: 0
+  m_Solutions: 000000000000000000000000
+  m_SolutionsCheck: 
 --- !u!4 &41375709
 Transform:
   m_ObjectHideFlags: 0
