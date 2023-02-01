@@ -45,6 +45,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip m_ASharpBFlatKey;
     [SerializeField] private AudioClip m_BKey;
 
+    //---VOICE CLIPS---//
+
+    [Header("Voice")]
+    [SerializeField] private AudioClip m_Voice1; //To be renamed once we know what SFX we'll need.
+    [SerializeField] private AudioClip m_Voice2;
+    [SerializeField] private AudioClip m_Voice3;
+
     //---SINGLETON---//
 
     private static AudioManager instance;
