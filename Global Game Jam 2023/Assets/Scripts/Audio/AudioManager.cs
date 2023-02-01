@@ -8,10 +8,28 @@ public class AudioManager : MonoBehaviour
     //---AUDIO SOURCES---//
 
     [Header("Audio Sources")]
-    [SerializeField] private AudioSource m_BGMAudioSource;
+    [SerializeField] private AudioSource m_BGMAudioSourceIntro;
+    [SerializeField] private AudioSource m_BGMAudioSourceLoop;
+    [SerializeField] private AudioMixer m_BGMAudioMixer;
     [SerializeField] private AudioSource m_SFXAudioSource;
 
+    //---BGM CLIPS---//
+
+    [Header("BGM")]
+    [SerializeField] private AudioClip m_BGMIntro;
+    [SerializeField] private AudioClip m_BGMLoop;
+    private float m_BGMOriginalVolume;
+
+    [SerializeField] private float m_FadeSpeed;
+    [SerializeField] private bool m_FadeIn;
+    [SerializeField] private bool m_FadeOut;
+
     //---SFX CLIPS---//
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip m_SFX1; //To be renamed once we know what SFX we'll need.
+    [SerializeField] private AudioClip m_SFX2;
+    [SerializeField] private AudioClip m_SFX3;
 
     [Header("SFX - Piano Keys")]
     [SerializeField] private AudioClip m_CKey;
@@ -52,6 +70,63 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        m_BGMOriginalVolume = m_BGMAudioSourceIntro.volume;
+        m_BGMAudioSourceLoop.volume = m_BGMAudioSourceIntro.volume;
+
+        m_BGMAudioSourceIntro.clip = m_BGMIntro;
+        m_BGMAudioSourceLoop.clip = m_BGMLoop;
+        m_BGMAudioSourceLoop.loop = true;
+
+        m_BGMAudioSourceIntro.Play();
+        m_BGMAudioSourceLoop.PlayDelayed(m_BGMAudioSourceIntro.clip.length);
+    }
+
+    private void Update()
+    {
+        if(m_FadeOut)
+        {
+            m_BGMAudioSourceIntro.volume -= m_FadeSpeed * Time.deltaTime;
+            m_BGMAudioSourceLoop.volume -= m_FadeSpeed * Time.deltaTime;
+
+            if(m_BGMAudioSourceIntro.volume == 0 && m_BGMAudioSourceLoop.volume == 0)
+            {
+                m_FadeOut = false;
+            }
+        }
+
+        if (m_FadeIn)
+        {
+            m_BGMAudioSourceIntro.volume += m_FadeSpeed * Time.deltaTime;
+            m_BGMAudioSourceLoop.volume += m_FadeSpeed * Time.deltaTime;
+
+            if(m_BGMAudioSourceIntro.volume == m_BGMOriginalVolume && m_BGMAudioSourceLoop.volume == m_BGMOriginalVolume)
+            {
+                m_FadeIn = false; 
+            }
+        }
+    }
+
+    //---BGM---//
+
+    public void PlayBGM()
+    {
+        m_FadeIn = true;
+    }
+
+    public void StopBGM()
+    {
+        m_FadeOut = true;
+    }
+
+    //---SFX---//
+
+    public void PlaySFX(string SFX)
+    {
+        //Imitate PlayKey switch-case format. 
     }
 
     //---PIANO KEYS FUNCTIONALITY---//
