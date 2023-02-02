@@ -2218,6 +2218,7 @@ MonoBehaviour:
   m_SFXAudioSource: {fileID: 935190187}
   m_BGMIntro: {fileID: 8300000, guid: e18611715e847e64293af8934a37da3b, type: 3}
   m_BGMLoop: {fileID: 8300000, guid: b1c486962a8a71c4a98ba02893e51846, type: 3}
+  m_BGMFinal: {fileID: 0}
   m_FadeSpeed: 0.4
   m_FadeIn: 0
   m_FadeOut: 0
@@ -2236,6 +2237,9 @@ MonoBehaviour:
   m_AKey: {fileID: 8300000, guid: cd8a1d1c121ad7d44b054043c8fdf03a, type: 3}
   m_ASharpBFlatKey: {fileID: 8300000, guid: 6a4569d184ad9ec4799857d1b2aecbb4, type: 3}
   m_BKey: {fileID: 8300000, guid: f90d57033fc274e448b6af84cc1f685d, type: 3}
+  m_Voice1: {fileID: 0}
+  m_Voice2: {fileID: 0}
+  m_Voice3: {fileID: 0}
 --- !u!82 &935190187
 AudioSource:
   m_ObjectHideFlags: 0
