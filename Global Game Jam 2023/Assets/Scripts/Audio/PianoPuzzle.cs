@@ -7,25 +7,25 @@ public class PianoPuzzle : MonoBehaviour
     //SOLUTION: 3 4 3 1 3 6 8 6 3 4
 
     [SerializeField] private int m_Solution1;
-    [SerializeField] private bool m_Solution1Check;
+    private bool m_Solution1Check;
     [SerializeField] private int m_Solution2;
-    [SerializeField] private bool m_Solution2Check;
+    private bool m_Solution2Check;
     [SerializeField] private int m_Solution3;
-    [SerializeField] private bool m_Solution3Check;
+     private bool m_Solution3Check;
     [SerializeField] private int m_Solution4;
-    [SerializeField] private bool m_Solution4Check;
+    private bool m_Solution4Check;
     [SerializeField] private int m_Solution5;
-    [SerializeField] private bool m_Solution5Check;
+    private bool m_Solution5Check;
     [SerializeField] private int m_Solution6;
-    [SerializeField] private bool m_Solution6Check;
+    private bool m_Solution6Check;
     [SerializeField] private int m_Solution7;
-    [SerializeField] private bool m_Solution7Check;
+    private bool m_Solution7Check;
     [SerializeField] private int m_Solution8;
-    [SerializeField] private bool m_Solution8Check;
+    private bool m_Solution8Check;
     [SerializeField] private int m_Solution9;
-    [SerializeField] private bool m_Solution9Check;
+    private bool m_Solution9Check;
     [SerializeField] private int m_Solution10;
-    [SerializeField] private bool m_Solution10Check;
+    private bool m_Solution10Check;
 
     //If I use a list, how do I keep track of the Solutions Original values (if I intend on keeping the Dummy Value)?
     //[SerializeField] private int[] m_Solutions; 
