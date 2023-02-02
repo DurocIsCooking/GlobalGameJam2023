@@ -27,11 +27,6 @@ public class PianoPuzzle : MonoBehaviour
     [SerializeField] private int m_Solution10;
     private bool m_Solution10Check;
 
-    //If I use a list, how do I keep track of the Solutions Original values (if I intend on keeping the Dummy Value)?
-    //[SerializeField] private int[] m_Solutions; 
-    //[SerializeField] private bool[] m_SolutionsCheck;
-    //private int[] m_SolutionsOrigin;
-
     private int m_DummyNumber = 0;
     private int m_Solution1Original;
     private int m_Solution2Original;

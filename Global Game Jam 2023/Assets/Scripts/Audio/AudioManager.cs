@@ -183,7 +183,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    //---PIANO KEYS FUNCTIONALITY---//
+    //---PIANO FUNCTIONALITY---//
 
     public void PlayKey(int key)
     {
@@ -228,5 +228,13 @@ public class AudioManager : MonoBehaviour
         }
 
         PianoPuzzle.Instance.CheckSolution(key);
+    }
+
+    public void PianoPuzzleSolve()
+    {
+        m_BGMAudioSourceLoop.Stop();                        //Stops the faded out loop.
+        m_BGMAudioSourceLoop.clip = m_BGMFinal;             //Switches to the final track.
+        m_BGMAudioSourceLoop.volume = m_BGMOriginalVolume;  //Resets the volume.
+        m_BGMAudioSourceLoop.Play();                        //Plays the final track.
     }
 }
