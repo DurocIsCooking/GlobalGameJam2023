@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9e4603f803605e7479facb2f40b258ab
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Papernotes
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ae91f9ba8ed08fd4393d1c8911e05e33, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
