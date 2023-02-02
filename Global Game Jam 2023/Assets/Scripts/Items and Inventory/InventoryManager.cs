@@ -22,10 +22,16 @@ public class InventoryManager : MonoBehaviour
             Instance = this;
         }
 
-        SetUiScreenPositions();
+        GenerateItemSlots();
     }
 
-    [HideInInspector] public List<ItemScriptableObject> Items = new List<ItemScriptableObject>();
+
+    public ItemSlot ItemInUse;
+
+    // List of items
+    private List<ItemSlot> _itemSlots = new List<ItemSlot>();
+    
+    // Number of item slots
     [SerializeField] private int _numItemSlots;
 
     // UI
@@ -35,114 +41,139 @@ public class InventoryManager : MonoBehaviour
     [Header("UI Screen Positions")]
     [SerializeField] private Vector2 _firstItemPosition; // Position from the bottom left of the screen
     [SerializeField] private float _itemPositionInterval; // Distance between items, in % of screen width
-    // Dictionary of Ui positions and gameobjects with sprites (there is a gameobject at each UI position)
-    private Dictionary<Vector2, Image> _uiScreenPositions = new Dictionary<Vector2, Image>();
-    private Dictionary<int, KeyValuePair<Vector2, Image>> _indexedPositions = new Dictionary<int, KeyValuePair<Vector2, Image>>();
-
-    private void SetUiScreenPositions()
+    
+    // Creates item slots with the specified positions and scale.
+    private void GenerateItemSlots()
     {
         if(_canvas.GetComponent<Canvas>() == null)
         {
             Debug.Log("Error: no canvas found");
         }
 
+        // For each item slot...
         for(int i = 0; i < _numItemSlots; i++)
         {
-            // Create a game object with an image component at each position to place sprites
-            GameObject uiAnchor = new GameObject();
-            uiAnchor.transform.SetParent(_canvas.transform);
-            Image image = uiAnchor.AddComponent<Image>();
-            uiAnchor.GetComponent<RectTransform>().localScale = new Vector3(_spriteScale, _spriteScale, 1);
-            // Make image transparent
-            image.color = new Color(image.color.r, image.color.g, image.color.b, 0); // Set image alpha to 0;
+            // 1) CREATE ITEM SLOT AND ADD NECESSARY COMPONENTS
 
-            // Anchor image to bottom left of canvas
-            RectTransform rectTransform = uiAnchor.GetComponent<RectTransform>();
+            // Create a game object, parent it to the canvas
+            GameObject itemSlotGameObject = new GameObject();
+            itemSlotGameObject.transform.SetParent(_canvas.transform);
+
+            // Add image component, scale image, and make image transparent since the item slot is empty
+            Image image = itemSlotGameObject.AddComponent<Image>();
+            itemSlotGameObject.GetComponent<RectTransform>().localScale = new Vector3(_spriteScale, _spriteScale, 1);
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
+
+            // Add ItemSlot script
+            itemSlotGameObject.AddComponent<ItemSlot>();
+
+            // Add button to detect clicks
+            Button inventorySlotButton = itemSlotGameObject.AddComponent<Button>();
+            inventorySlotButton.onClick.AddListener(itemSlotGameObject.GetComponent<ItemSlot>().OnClick); // Triggers ItemSlot's "OnClick" method when the button is clicked
+            inventorySlotButton.transition = Selectable.Transition.None; // Makes it so button doesn't change colour when clicked
+            
+
+            // 2) PLACE ITEM SLOT IN UI
+
+            // Anchor item slot to bottom left of canvas
+            RectTransform rectTransform = itemSlotGameObject.GetComponent<RectTransform>();
             rectTransform.anchorMin = Vector2.zero;
             rectTransform.anchorMax = Vector2.zero;
 
-            // Calculate interval
+            // Calculate interval (distance between each item slot)
             float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width / 100;
 
             // Set position
             Vector2 position = new Vector2(_firstItemPosition.x + interval, _firstItemPosition.y);
             rectTransform.position = position;
 
+
+            // 3) ADD ITEM SLOT TO LIST
+
+            _itemSlots.Add(itemSlotGameObject.GetComponent<ItemSlot>());
+
             // Add pair to dictionary
-            KeyValuePair<Vector2, Image> pair = new KeyValuePair<Vector2, Image>(position, image);
-            _uiScreenPositions.Add(pair.Key, pair.Value);
-            _indexedPositions.Add(i, pair);
+            //KeyValuePair<Vector2, Image> pair = new KeyValuePair<Vector2, Image>(position, image);
+            //_itemSlots.Add(pair.Key, pair.Value);
+            //_indexedPositions.Add(i, pair);
         }
     }
 
-    public void AddItem(ItemScriptableObject item)
+    public void AddItem(Item item)
     {
-        Items.Add(item);
-        RenderItemsInUi();
-    }
-
-    private void RemoveItem(string itemName)
-    {
-        foreach (ItemScriptableObject item in Items)
+        foreach (ItemSlot itemSlot in _itemSlots)
         {
-            if (item.name == itemName)
+            if (itemSlot.Item != null)
             {
-                // remove item
-                Items.Remove(item);
-                RenderItemsInUi();
+                continue;
             }
+
+            itemSlot.AddItem(item);
+            return;
         }
     }
+
+    //private void RemoveItem(string itemName)
+    //{
+    //    foreach (Item item in Items)
+    //    {
+    //        if (item.name == itemName)
+    //        {
+    //            // remove item
+    //            Items.Remove(item);
+    //            RenderItemInUi();
+    //        }
+    //    }
+    //}
 
     // Returns true if the inventory contains an item of the specified name
     public bool HasItem(string itemName)
     {
-        foreach(ItemScriptableObject item in Items)
+        foreach (ItemSlot itemSlot in _itemSlots)
         {
-            if (item.name == itemName)
+            if (itemSlot.Item.Name == itemName)
                 return true;
         }
         return false;
     }
-    
-    // Returns true if the player has N or more items of the specified name, where N = count
-    public bool HasItem(string itemName, int count)
+
+    // Returns the # of an item owned by the player
+    public int ItemCount(string itemName)
     {
         int itemsFound = 0;
-        foreach (ItemScriptableObject item in Items)
+        foreach (ItemSlot itemSlot in _itemSlots)
         {
-            if (item.name == itemName)
-                itemsFound++;
+            if (itemSlot.Item.Name == itemName)
+                itemsFound += 1;
         }
-        if (itemsFound >= count)
-            return true;
-
-        return false;
+        return itemsFound;
     }
 
-    private void RenderItemsInUi()
-    {
-        // Iterate through dictionary and set values
-        for(int i = 0; i < _indexedPositions.Count; i++)
-        {
-            if (Items.Count > i)
-            {
-                // Add item
-                Color tempColor = _indexedPositions[i].Value.color;
-                tempColor.a = 1;
-                _indexedPositions[i].Value.color = tempColor;
-                _indexedPositions[i].Value.sprite = Items[i].Sprite;
-            }
-            else
-            {
-                // Make blank
-                Color tempColor = _indexedPositions[i].Value.color;
-                tempColor.a = 0;
-                _indexedPositions[i].Value.color = tempColor;
-                _indexedPositions[i].Value.sprite = null;
-            }
-        }
-    }
+    //private void RenderItemInUi(ItemSlot itemSlot)
+    //{
+    //    itemSlot.gameObject.GetComponent<Image>().sprite = itemSlot.Item.Sprite;
+
+    //    // Iterate through dictionary and set values
+    //    for (int i = 0; i < _indexedPositions.Count; i++)
+    //    {
+    //        if (Items.Count > i)
+    //        {
+    //            // Add item
+    //            Color tempColor = _indexedPositions[i].Value.color;
+    //            tempColor.a = 1;
+    //            _indexedPositions[i].Value.color = tempColor;
+    //            _indexedPositions[i].Value.sprite = Items[i].Sprite;
+    //        }
+    //        else
+    //        {
+    //            // Make blank
+    //            Color tempColor = _indexedPositions[i].Value.color;
+    //            tempColor.a = 0;
+    //            _indexedPositions[i].Value.color = tempColor;
+    //            _indexedPositions[i].Value.sprite = null;
+    //        }
+    //    }
+    //}
 
     // Draws cubes that show where items will display in UI
     private void OnDrawGizmos()

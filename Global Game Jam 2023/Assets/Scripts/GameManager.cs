@@ -25,8 +25,16 @@ public class GameManager : MonoBehaviour
     { 
         FreePlay,
         Dialogue,
-        ItemInteraction
+        UsingItem
     }
 
     public GameStates CurrentGameState;
+
+
+
+    public void GrowTree()
+    {
+        // Grow tree
+        Debug.Log("Grow tree!");
+    }    
 }
