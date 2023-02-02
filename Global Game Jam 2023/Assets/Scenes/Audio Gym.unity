@@ -191,10 +191,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Solution1: 3
   m_Solution1Check: 0
-  m_Solution2: 6
+  m_Solution2: 4
   m_Solution2Check: 0
-  m_Solution3: 5
+  m_Solution3: 3
   m_Solution3Check: 0
+  m_Solution4: 1
+  m_Solution4Check: 0
+  m_Solution5: 3
+  m_Solution5Check: 0
+  m_Solution6: 6
+  m_Solution6Check: 0
+  m_Solution7: 8
+  m_Solution7Check: 0
+  m_Solution8: 6
+  m_Solution8Check: 0
+  m_Solution9: 3
+  m_Solution9Check: 0
+  m_Solution10: 4
+  m_Solution10Check: 0
 --- !u!4 &41375709
 Transform:
   m_ObjectHideFlags: 0
@@ -1187,7 +1201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &358342889
 Transform:
   m_ObjectHideFlags: 0
