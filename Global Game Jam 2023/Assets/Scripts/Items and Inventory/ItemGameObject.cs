@@ -8,17 +8,16 @@ public class ItemGameObject : MonoBehaviour, IClickable
         // Pickup SFX and animation
 
     // Click the item to pick it up
-    private PolygonCollider2D _collider;
-    public ItemScriptableObject ItemData;
+    public Item Item;
 
     private void Awake()
     {
-        GetComponent<SpriteRenderer>().sprite = ItemData.Sprite;
+        GetComponent<SpriteRenderer>().sprite = Item.Sprite;
     }
 
     public void OnClick()
     {
-        InventoryManager.Instance.AddItem(ItemData);
+        InventoryManager.Instance.AddItem(Item);
         OnDestroy();
     }
 
