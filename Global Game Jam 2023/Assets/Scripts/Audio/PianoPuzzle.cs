@@ -8,22 +8,31 @@ public class PianoPuzzle : MonoBehaviour
 
     [SerializeField] private int m_Solution1;
     private bool m_Solution1Check;
+
     [SerializeField] private int m_Solution2;
     private bool m_Solution2Check;
+
     [SerializeField] private int m_Solution3;
      private bool m_Solution3Check;
+
     [SerializeField] private int m_Solution4;
     private bool m_Solution4Check;
+
     [SerializeField] private int m_Solution5;
     private bool m_Solution5Check;
+
     [SerializeField] private int m_Solution6;
     private bool m_Solution6Check;
+
     [SerializeField] private int m_Solution7;
     private bool m_Solution7Check;
+
     [SerializeField] private int m_Solution8;
     private bool m_Solution8Check;
+
     [SerializeField] private int m_Solution9;
     private bool m_Solution9Check;
+
     [SerializeField] private int m_Solution10;
     private bool m_Solution10Check;
 
@@ -161,7 +170,7 @@ public class PianoPuzzle : MonoBehaviour
         m_Solution5 = m_Solution5Original;
 
         m_Solution6Check = false;
-        m_Solution6 = m_Solution7Original;
+        m_Solution6 = m_Solution6Original;
 
         m_Solution7Check = false;
         m_Solution7 = m_Solution7Original;
