@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource m_BGMAudioSourceIntro;
     [SerializeField] private AudioSource m_BGMAudioSourceLoop;
-    [SerializeField] private AudioMixer m_BGMAudioMixer;
     [SerializeField] private AudioSource m_SFXAudioSource;
+    [SerializeField] private AudioMixer m_AudioMixer;
 
     //---BGM CLIPS---//
 
@@ -28,9 +28,13 @@ public class AudioManager : MonoBehaviour
     //---SFX CLIPS---//
 
     [Header("SFX")]
-    [SerializeField] private AudioClip m_SFX1; //To be renamed once we know what SFX we'll need.
-    [SerializeField] private AudioClip m_SFX2;
-    [SerializeField] private AudioClip m_SFX3;
+    [SerializeField] private AudioClip m_SFXPickUp;
+    [SerializeField] private AudioClip m_SFXKey;
+    [SerializeField] private AudioClip m_SFXUnlock;
+    [SerializeField] private AudioClip m_SFXPaper;
+    [SerializeField] private AudioClip m_SFXBook;
+    [SerializeField] private AudioClip m_SFXKettle;
+    [SerializeField] private AudioClip m_SFXTimeTravel;
 
     [Header("SFX - Piano Keys")]
     [SerializeField] private AudioClip m_CKey;
@@ -49,7 +53,7 @@ public class AudioManager : MonoBehaviour
     //---VOICE CLIPS---//
 
     [Header("Voice")]
-    [SerializeField] private AudioClip m_Voice1; //To be renamed once we know what SFX we'll need.
+    [SerializeField] private AudioClip m_Voice1; //To be renamed once we know what Voice clips we'll need.
     [SerializeField] private AudioClip m_Voice2;
     [SerializeField] private AudioClip m_Voice3;
 
@@ -82,6 +86,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        //---SETS AND PLAYS THE INITIAL VOLUMES AND AUDIO CLIPS---//
+
         m_BGMOriginalVolume = m_BGMAudioSourceIntro.volume;
         m_BGMAudioSourceLoop.volume = m_BGMAudioSourceIntro.volume;
 
@@ -95,6 +101,8 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        //---FADES THE BGM---//
+
         if(m_FadeOut)
         {
             m_BGMAudioSourceIntro.volume -= m_FadeSpeed * Time.deltaTime;
@@ -118,6 +126,24 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //---MIXER VOLUMES---//
+
+    public void MasterVol(float MasterSlider)
+    {
+        m_AudioMixer.SetFloat("m_MasterVol", Mathf.Log10(MasterSlider) * 20);
+    }
+
+    public void BGMVol(float BGMSlider)
+    {
+        m_AudioMixer.SetFloat("m_BGMVol", Mathf.Log10(BGMSlider) * 20);
+    }
+
+    public void SFXVol(float SFXSlider)
+    {
+        m_AudioMixer.SetFloat("m_SFXVol", Mathf.Log10(SFXSlider) * 20);
+    }
+
+
     //---BGM---//
 
     public void PlayBGM()
@@ -134,7 +160,27 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(string SFX)
     {
-        //Imitate PlayKey switch-case format. 
+        switch (SFX)
+        {
+            case "Pickup":
+                m_SFXAudioSource.PlayOneShot(m_SFXPickUp);
+                break;
+            case "Key":
+                m_SFXAudioSource.PlayOneShot(m_SFXKey);
+                break;
+            case "Unlock":
+                m_SFXAudioSource.PlayOneShot(m_SFXUnlock);
+                break;
+            case "Paper":
+                m_SFXAudioSource.PlayOneShot(m_SFXPaper);
+                break;
+            case "Book":
+                m_SFXAudioSource.PlayOneShot(m_SFXBook);
+                break;
+            case "Kettle":
+                m_SFXAudioSource.PlayOneShot(m_SFXTimeTravel);
+                break;
+        }
     }
 
     //---PIANO KEYS FUNCTIONALITY---//
