@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ItemGameObject : MonoBehaviour, IClickable
 {
+    // TO DO
+        // Pickup SFX and animation
+
     // Click the item to pick it up
     private PolygonCollider2D _collider;
     public ItemScriptableObject ItemData;
@@ -15,7 +18,6 @@ public class ItemGameObject : MonoBehaviour, IClickable
 
     public void OnClick()
     {
-        Debug.Log("I was clicked");
         InventoryManager.Instance.AddItem(ItemData);
         OnDestroy();
     }

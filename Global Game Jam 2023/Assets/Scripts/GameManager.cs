@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Singleton pattern
+    public static GameManager Instance { get; private set; }
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+        CurrentGameState = GameStates.FreePlay;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    public enum GameStates
+    { 
+        FreePlay,
+        Dialogue,
+        ItemInteraction
     }
+
+    public GameStates CurrentGameState;
 }

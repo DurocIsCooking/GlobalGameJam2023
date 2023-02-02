@@ -6,23 +6,8 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     // TO DO
-    // Make items scriptable objects
     // dotween animation when items are added, removed, or shifted in inventory 
     // In "HasItem" function, make sure it throws an error message for an item name that doesn't exist
-
-    [HideInInspector] public List<ItemScriptableObject> Items = new List<ItemScriptableObject>();
-    [SerializeField] private int _numItemSlots;
-
-    // UI
-    [Header("UI")]
-    [SerializeField] private GameObject _canvas;
-    [SerializeField] private float _spriteScale = 1;
-    [Header("UI Screen Positions")]
-    [SerializeField] private Vector2 _firstItemPosition; // Position from the bottom left of the screen
-    [SerializeField] private float _itemPositionInterval; // Distance between items, in % of screen width
-    // Dictionary of Ui positions and gameobjects with sprites (there is a gameobject at each UI position)
-    private Dictionary<Vector2, Image> _uiScreenPositions = new Dictionary<Vector2, Image>();
-    private Dictionary<int, KeyValuePair<Vector2, Image>> _indexedPositions = new Dictionary<int, KeyValuePair<Vector2, Image>>();
 
     // Singleton pattern
     public static InventoryManager Instance { get; private set; }
@@ -39,6 +24,20 @@ public class InventoryManager : MonoBehaviour
 
         SetUiScreenPositions();
     }
+
+    [HideInInspector] public List<ItemScriptableObject> Items = new List<ItemScriptableObject>();
+    [SerializeField] private int _numItemSlots;
+
+    // UI
+    [Header("UI")]
+    [SerializeField] private GameObject _canvas;
+    [SerializeField] private float _spriteScale = 1;
+    [Header("UI Screen Positions")]
+    [SerializeField] private Vector2 _firstItemPosition; // Position from the bottom left of the screen
+    [SerializeField] private float _itemPositionInterval; // Distance between items, in % of screen width
+    // Dictionary of Ui positions and gameobjects with sprites (there is a gameobject at each UI position)
+    private Dictionary<Vector2, Image> _uiScreenPositions = new Dictionary<Vector2, Image>();
+    private Dictionary<int, KeyValuePair<Vector2, Image>> _indexedPositions = new Dictionary<int, KeyValuePair<Vector2, Image>>();
 
     private void SetUiScreenPositions()
     {
