@@ -5,7 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue
 {
-    public string NPC_Name;
+    public enum Characters
+    {
+        Kiino,
+        Potello
+    }
+    public Characters CharacterSpeaking;
 
     [TextArea(3,10)]
     public string[] Sentences;

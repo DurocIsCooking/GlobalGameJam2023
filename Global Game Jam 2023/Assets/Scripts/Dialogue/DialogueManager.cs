@@ -22,15 +22,22 @@ public class DialogueManager : MonoBehaviour
         {
             Instance = this;
         }
-
+        DialogueBoxKiino.SetActive(false);
+        DialogueBoxPotello.SetActive(false);
     }
 
-    public TextMeshProUGUI NameText;
-    public TextMeshProUGUI DialogueText;
+    private GameObject _currentDialogueBox;
+    private TextMeshProUGUI _currentDialogueText;
+    public GameObject DialogueBoxKiino;
+    public GameObject DialogueBoxPotello;
+    public TextMeshProUGUI DialogueTextKiino;
+    public TextMeshProUGUI DialogueTextPotello;
     private Queue<string> _sentences;
     [SerializeField] private float _typingDelay;
     private float _currentTypingDelay; // Need to set the typing delay to 0 when the player decides to skip dialogue
     private bool _isTypingSentence = false;
+
+    public DialogueTrigger IncorrectItemDialogue;
 
     private void Start()
     {
@@ -39,9 +46,20 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        GameManager.Instance.CurrentGameState = GameManager.GameStates.Dialogue;
+        GameManager.Instance.SwitchGameState(GameManager.GameStates.Dialogue);
 
-        NameText.text = dialogue.NPC_Name;
+        if(dialogue.CharacterSpeaking == Dialogue.Characters.Kiino)
+        {
+            _currentDialogueBox = DialogueBoxKiino;
+            _currentDialogueText = DialogueTextKiino;
+        }
+        else
+        {
+            _currentDialogueBox = DialogueBoxPotello;
+            _currentDialogueText = DialogueTextPotello;
+        }
+
+        _currentDialogueBox.SetActive(true);
 
         _sentences.Clear();
 
@@ -85,10 +103,10 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         _isTypingSentence = true;
-        DialogueText.text = "";
+        _currentDialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
         {
-            DialogueText.text += letter;
+            _currentDialogueText.text += letter;
             yield return new WaitForSeconds(_currentTypingDelay);
         }
         _isTypingSentence = false;
@@ -96,8 +114,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        GameManager.Instance.CurrentGameState = GameManager.GameStates.FreePlay;
-        // Close dialogue box
+        GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        _currentDialogueBox.SetActive(false);
         Debug.Log("End of conversation");
     }
 

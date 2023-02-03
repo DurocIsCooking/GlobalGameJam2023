@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
         GenerateItemSlots();
     }
 
-
+    public GameObject ItemSlotPrefab;
     public ItemSlot ItemInUse;
 
     // List of items
@@ -37,7 +37,7 @@ public class InventoryManager : MonoBehaviour
     // UI
     [Header("UI")]
     [SerializeField] private GameObject _canvas;
-    [SerializeField] private float _spriteScale = 1;
+    public float SpriteScale = 1;
     [Header("UI Screen Positions")]
     [SerializeField] private Vector2 _firstItemPosition; // Position from the bottom left of the screen
     [SerializeField] private float _itemPositionInterval; // Distance between items, in % of screen width
@@ -56,22 +56,11 @@ public class InventoryManager : MonoBehaviour
             // 1) CREATE ITEM SLOT AND ADD NECESSARY COMPONENTS
 
             // Create a game object, parent it to the canvas
-            GameObject itemSlotGameObject = new GameObject();
+            GameObject itemSlotGameObject = Instantiate(ItemSlotPrefab);
             itemSlotGameObject.transform.SetParent(_canvas.transform);
 
-            // Add image component, scale image, and make image transparent since the item slot is empty
-            Image image = itemSlotGameObject.AddComponent<Image>();
-            itemSlotGameObject.GetComponent<RectTransform>().localScale = new Vector3(_spriteScale, _spriteScale, 1);
-            image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
-
-            // Add ItemSlot script
-            itemSlotGameObject.AddComponent<ItemSlot>();
-
-            // Add button to detect clicks
-            Button inventorySlotButton = itemSlotGameObject.AddComponent<Button>();
-            inventorySlotButton.onClick.AddListener(itemSlotGameObject.GetComponent<ItemSlot>().OnClick); // Triggers ItemSlot's "OnClick" method when the button is clicked
-            inventorySlotButton.transition = Selectable.Transition.None; // Makes it so button doesn't change colour when clicked
-            
+            // Scale item slot
+            itemSlotGameObject.GetComponent<RectTransform>().localScale = new Vector3(SpriteScale, SpriteScale, 1);
 
             // 2) PLACE ITEM SLOT IN UI
 
@@ -91,40 +80,24 @@ public class InventoryManager : MonoBehaviour
             // 3) ADD ITEM SLOT TO LIST
 
             _itemSlots.Add(itemSlotGameObject.GetComponent<ItemSlot>());
-
-            // Add pair to dictionary
-            //KeyValuePair<Vector2, Image> pair = new KeyValuePair<Vector2, Image>(position, image);
-            //_itemSlots.Add(pair.Key, pair.Value);
-            //_indexedPositions.Add(i, pair);
         }
     }
 
     public void AddItem(Item item)
     {
+        Debug.Log("Adding item");
         foreach (ItemSlot itemSlot in _itemSlots)
         {
             if (itemSlot.Item != null)
             {
+                Debug.Log("Slot full");
                 continue;
             }
-
+            Debug.Log("Found empty slot");
             itemSlot.AddItem(item);
             return;
         }
     }
-
-    //private void RemoveItem(string itemName)
-    //{
-    //    foreach (Item item in Items)
-    //    {
-    //        if (item.name == itemName)
-    //        {
-    //            // remove item
-    //            Items.Remove(item);
-    //            RenderItemInUi();
-    //        }
-    //    }
-    //}
 
     // Returns true if the inventory contains an item of the specified name
     public bool HasItem(string itemName)
@@ -189,7 +162,7 @@ public class InventoryManager : MonoBehaviour
             float yOffset = _canvas.GetComponent<RectTransform>().rect.height / 2;
             float interval = _itemPositionInterval * itemCount * _canvas.GetComponent<RectTransform>().rect.width / 100;
             Vector2 position = new Vector2(_firstItemPosition.x + interval - xOffset, _firstItemPosition.y - yOffset);
-            Gizmos.DrawCube(position, new Vector3(100, 100, 100) * _spriteScale);
+            Gizmos.DrawCube(position, new Vector3(100, 100, 100) * SpriteScale);
             itemCount += 1;
         }
     }

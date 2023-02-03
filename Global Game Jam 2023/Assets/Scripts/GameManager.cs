@@ -25,12 +25,17 @@ public class GameManager : MonoBehaviour
     { 
         FreePlay,
         Dialogue,
-        UsingItem
+        UsingItem,
+        PopUp
     }
 
     public GameStates CurrentGameState;
 
-
+    public void SwitchGameState(GameStates newGameState)
+    {
+        Debug.Log("Game state: " + newGameState.ToString());
+        CurrentGameState = newGameState;
+    }
 
     public void GrowTree()
     {

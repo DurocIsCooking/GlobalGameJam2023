@@ -8,7 +8,6 @@ public class DisplaySpriteInEditMode : MonoBehaviour
 {
     private void Awake()
     {
-        // GetComponent<TextMeshPro>().text = GetComponent<ItemGameObject>().Item.Name;
-        // GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<ItemGameObject>().Item.Sprite;
+        GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<ItemGameObject>().Item.Sprite;
     }
 }
