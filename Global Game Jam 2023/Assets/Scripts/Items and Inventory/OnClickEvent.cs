@@ -38,7 +38,6 @@ public class OnClickEvent : MonoBehaviour, IClickable
                 break;
             case EventTypes.PopUp: // Safe, old box, piano
                 GameManager.Instance.SwitchGameState(GameManager.GameStates.PopUp);
-                // TO DO: open pop-up
                 break;
             case EventTypes.Dialogue:
                 if (GameManager.Instance.CurrentGameState == GameManager.GameStates.FreePlay)

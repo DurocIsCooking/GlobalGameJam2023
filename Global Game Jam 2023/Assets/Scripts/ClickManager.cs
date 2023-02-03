@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-    // TO DO: make it possible to interact with items in inventory
     // TO DO: in pop-up game state, only interact with pop-up
 
     private void Update()
@@ -26,15 +25,20 @@ public class ClickManager : MonoBehaviour
                     break;
 
                 case GameManager.GameStates.FreePlay:
-                case GameManager.GameStates.UsingItem:
                     IClickable objectClicked = CheckForClickableObject();
                     if (objectClicked != null)
                     {
-                        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
-                        {
-                            InventoryManager.Instance.ItemInUse.transform.localScale = Vector3.one;
-                        }
                         objectClicked.OnClick();
+                    }
+                        break;
+                case GameManager.GameStates.UsingItem:
+                    IClickable objectClicked2 = CheckForClickableObject();
+                    if (objectClicked2 != null)
+                    {
+                        
+                        InventoryManager.Instance.ItemInUse.transform.localScale = Vector3.one;
+                        // Try item interaction
+                        objectClicked2.OnClick();
                     }
                     break;
             }   

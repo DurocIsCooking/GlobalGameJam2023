@@ -23,19 +23,35 @@ public class ItemSlot : MonoBehaviour, IClickable
         }
         if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp)
         {
-            return;
+            InventoryManager.Instance.ItemInUse.StopUsingItem();
         }
         if(Item == null)
         {
             return;
-        }    
+        }
 
-        GameManager.Instance.SwitchGameState(GameManager.GameStates.UsingItem);
-        gameObject.transform.localScale = 2 * InventoryManager.Instance.SpriteScale * Vector3.one;
-        _xButton.SetActive(true);
-        // TO DO: reveal X button
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
+        {
+            InventoryManager.Instance.ItemInUse.StopUsingItem();
+        }
+
         // Let the inventory manager know that this item is in use
         InventoryManager.Instance.ItemInUse = this;
+
+        // Switch game state
+        GameManager.Instance.SwitchGameState(GameManager.GameStates.UsingItem);
+
+        // Handle pop-up if applicable
+        if (Item.PopUpFromInventory)
+        {
+            InventoryManager.Instance.OpenPopUp(Item);
+        }
+
+        // UI changes, to show that item is in use and to give the player a way to cancel action
+        gameObject.transform.localScale = 2 * InventoryManager.Instance.SpriteScale * Vector3.one;
+        _xButton.SetActive(true);
+
+        
     }
 
     public void StopUsingItem()
@@ -44,6 +60,7 @@ public class ItemSlot : MonoBehaviour, IClickable
         gameObject.transform.localScale = InventoryManager.Instance.SpriteScale * Vector3.one;
         InventoryManager.Instance.ItemInUse = null;
         GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        InventoryManager.Instance.ClosePopUp();
     }
 
     public void AddItem(Item item)

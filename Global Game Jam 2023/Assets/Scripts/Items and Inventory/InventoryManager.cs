@@ -23,15 +23,22 @@ public class InventoryManager : MonoBehaviour
         }
 
         GenerateItemSlots();
+
+        // Pop-up window
+        PopUpWindow.gameObject.SetActive(false);
+        PopUpWindow.color = Color.white;
+        PopUpWindow.transform.GetChild(0).gameObject.SetActive(false); // Child object is a TextMeshPro that says "Pop-up window" for UI design purposes.
+        _popUpButton = PopUpWindow.transform.GetChild(1).gameObject;
     }
 
-    public GameObject ItemSlotPrefab;
-    public ItemSlot ItemInUse;
+    // Pop-up window
+    public Image PopUpWindow;
+    private GameObject _popUpButton;
 
-    // List of items
+    // Item management
+    public GameObject ItemSlotPrefab;
+    [HideInInspector] public ItemSlot ItemInUse;
     private List<ItemSlot> _itemSlots = new List<ItemSlot>();
-    
-    // Number of item slots
     [SerializeField] private int _numItemSlots;
 
     // UI
@@ -122,31 +129,32 @@ public class InventoryManager : MonoBehaviour
         return itemsFound;
     }
 
-    //private void RenderItemInUi(ItemSlot itemSlot)
-    //{
-    //    itemSlot.gameObject.GetComponent<Image>().sprite = itemSlot.Item.Sprite;
+    public void OpenPopUp(Item item)
+    {
+        PopUpWindow.gameObject.SetActive(true);
+        PopUpWindow.sprite = item.PopUpSprite;
+        if(ItemInUse.Item.PopUpEvent.GetPersistentEventCount() == 0)
+        {
+            _popUpButton.SetActive(false);
+        }
+        else
+        {
+            _popUpButton.SetActive(true);
+        }
 
-    //    // Iterate through dictionary and set values
-    //    for (int i = 0; i < _indexedPositions.Count; i++)
-    //    {
-    //        if (Items.Count > i)
-    //        {
-    //            // Add item
-    //            Color tempColor = _indexedPositions[i].Value.color;
-    //            tempColor.a = 1;
-    //            _indexedPositions[i].Value.color = tempColor;
-    //            _indexedPositions[i].Value.sprite = Items[i].Sprite;
-    //        }
-    //        else
-    //        {
-    //            // Make blank
-    //            Color tempColor = _indexedPositions[i].Value.color;
-    //            tempColor.a = 0;
-    //            _indexedPositions[i].Value.color = tempColor;
-    //            _indexedPositions[i].Value.sprite = null;
-    //        }
-    //    }
-    //}
+        GameManager.Instance.SwitchGameState(GameManager.GameStates.PopUp);
+    }
+
+    public void ClosePopUp()
+    {
+        PopUpWindow.gameObject.SetActive(false);
+    }
+
+    public void UsePopUpItem()
+    {
+        ItemInUse.Item.PopUpEvent.Invoke();
+        ItemInUse.StopUsingItem();
+    }
 
     // Draws cubes that show where items will display in UI
     private void OnDrawGizmos()

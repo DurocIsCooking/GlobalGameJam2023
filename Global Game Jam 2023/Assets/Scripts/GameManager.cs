@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,8 +19,14 @@ public class GameManager : MonoBehaviour
         }
 
         CurrentGameState = GameStates.FreePlay;
+        PresentCamera.enabled = true;
+        PastCamera.enabled = false;
     }
 
+    public Camera PresentCamera;
+    public Camera PastCamera;
+
+    
 
     public enum GameStates
     { 
@@ -37,9 +44,10 @@ public class GameManager : MonoBehaviour
         CurrentGameState = newGameState;
     }
 
-    public void GrowTree()
+    public void TimeTravel()
     {
-        // Grow tree
-        Debug.Log("Grow tree!");
-    }    
+        PresentCamera.enabled = !PresentCamera.enabled;
+        PastCamera.enabled = !PastCamera.enabled;
+    }
+
 }
