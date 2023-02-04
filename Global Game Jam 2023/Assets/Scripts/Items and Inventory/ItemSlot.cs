@@ -59,6 +59,8 @@ public class ItemSlot : MonoBehaviour, IClickable
         _xButton.SetActive(false);
         gameObject.transform.localScale = InventoryManager.Instance.SpriteScale * Vector3.one;
         InventoryManager.Instance.ItemInUse = null;
+
+        //if(GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
         GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
         InventoryManager.Instance.ClosePopUp();
     }

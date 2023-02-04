@@ -116,7 +116,10 @@ public class DialogueManager : MonoBehaviour
     {
         GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
         _currentDialogueBox.SetActive(false);
-        Debug.Log("End of conversation");
     }
 
+    public void WrongItemDialogue()
+    {
+        transform.GetChild(0).GetComponent<DialogueTrigger>().TriggerDialogue();
+    }
 }
