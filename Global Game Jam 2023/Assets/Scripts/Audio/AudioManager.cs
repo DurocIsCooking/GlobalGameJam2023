@@ -42,6 +42,10 @@ public class AudioManager : MonoBehaviour
     private bool m_TickLastPlayed;
     private bool m_TockLastPlayed;
 
+    [Header("SFX - Menu")]
+    [SerializeField] private AudioClip m_MenuClick;
+    [SerializeField] private AudioClip m_MenuHover;
+
     [Header("SFX - Piano Keys")]
     [SerializeField] private AudioClip m_CKey;
     [SerializeField] private AudioClip m_CSharpDFlatKey;
@@ -56,12 +60,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip m_ASharpBFlatKey;
     [SerializeField] private AudioClip m_BKey;
 
-    //---VOICE CLIPS---//
+    private string m_PreviousSFX = "";
+    private float m_SFXOriginalVolume;
 
+    //---VOICE CLIPS---//
+    /*
     [Header("Voice")]
     [SerializeField] private AudioClip m_Voice1; //To be renamed once we know what Voice clips we'll need.
     [SerializeField] private AudioClip m_Voice2;
     [SerializeField] private AudioClip m_Voice3;
+    */
 
     //---SINGLETON---//
 
@@ -95,6 +103,7 @@ public class AudioManager : MonoBehaviour
         m_TockLastPlayed = true;
 
         //---SETS AND PLAYS THE INITIAL VOLUMES AND AUDIO CLIPS---//
+        m_SFXOriginalVolume = m_SFXAudioSource.volume;
 
         m_BGMOriginalVolume = m_BGMAudioSourceIntro.volume;
         m_BGMAudioSourceLoop.volume = m_BGMAudioSourceIntro.volume;
@@ -168,6 +177,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(string SFX)
     {
+        m_SFXAudioSource.volume = m_SFXOriginalVolume;
+
         switch (SFX)
         {
             case "Pickup":
@@ -208,7 +219,24 @@ public class AudioManager : MonoBehaviour
                     m_TockLastPlayed = true;
                 }
                 break;
+            case "Menu Click":
+                m_SFXAudioSource.PlayOneShot(m_MenuClick, 0.3f);
+                break;
+            case "Menu Hover":
+
+                m_SFXAudioSource.volume = 0.3f;
+
+                if (m_PreviousSFX == "Hover")
+                {
+                    m_SFXAudioSource.Stop();
+                }
+
+                m_SFXAudioSource.clip = m_MenuHover;
+                m_SFXAudioSource.Play();
+                break;
         }
+
+        m_PreviousSFX = SFX;
     }
 
     //---PIANO FUNCTIONALITY---//
