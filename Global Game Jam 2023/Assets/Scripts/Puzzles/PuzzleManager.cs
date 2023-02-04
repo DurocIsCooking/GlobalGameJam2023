@@ -6,13 +6,13 @@ public class PuzzleManager : MonoBehaviour
 {
     [Header("Puzzles")]
     [SerializeField] private GameObject m_SafePuzzle;
-    //[SerializeField] private GameObject m_GlyphPuzzle;
+    [SerializeField] private GameObject m_GlyphPuzzle;
     [SerializeField] private GameObject m_ClockPuzzle;
     [SerializeField] private GameObject m_PianoPuzzle;
     private GameObject m_CurrentPuzzle;
 
     [SerializeField] private bool m_DebugSafePuzzle;
-    //[SerializeField] private bool m_DebugGlyphPuzzle;
+    [SerializeField] private bool m_DebugGlyphPuzzle;
     [SerializeField] private bool m_DebugClockPuzzle;
     [SerializeField] private bool m_DebugPianoPuzzle;
     [SerializeField] private bool m_DebugOffSwitch;
@@ -55,7 +55,7 @@ public class PuzzleManager : MonoBehaviour
     private void Start()
     {
         m_SafePuzzle.transform.position = m_OffScreen.position;
-        //m_GlyphPuzzle.transform.position = m_OffScreen.position;
+        m_GlyphPuzzle.transform.position = m_OffScreen.position;
         m_ClockPuzzle.transform.position = m_OffScreen.position;
         m_PianoPuzzle.transform.position = m_OffScreen.position;
 
@@ -70,10 +70,10 @@ public class PuzzleManager : MonoBehaviour
         {
             PuzzleUp("Safe");
         }
-        /*else if(m_DebugGlyphPuzzle)
+        else if(m_DebugGlyphPuzzle)
         {
             PuzzleUp("Glyph");
-        }*/
+        }
         else if(m_DebugClockPuzzle)
         {
             PuzzleUp("Clock");
@@ -85,10 +85,10 @@ public class PuzzleManager : MonoBehaviour
         else if(m_DebugOffSwitch)
         {
             m_DebugSafePuzzle = false;
-            //m_DebugGlyphPuzzle = false;
+            m_DebugGlyphPuzzle = false;
             m_DebugClockPuzzle = false;
             m_DebugPianoPuzzle = false;
-            PuzzleDown();
+            PuzzleDown("Regular");
         }
 
         if (m_MovePuzzleUp)
@@ -100,7 +100,7 @@ public class PuzzleManager : MonoBehaviour
                 m_MovePuzzleUp = false;
 
                 m_DebugSafePuzzle = false;
-                //m_DebugGlyphPuzzle = false;
+                m_DebugGlyphPuzzle = false;
                 m_DebugClockPuzzle = false;
                 m_DebugPianoPuzzle = false;
             }
@@ -126,9 +126,9 @@ public class PuzzleManager : MonoBehaviour
             case "Safe":
                 m_CurrentPuzzle = m_SafePuzzle;
                 break;
-            /*case "Glyph":
+            case "Glyph":
                 m_CurrentPuzzle = m_GlyphPuzzle;
-                break;*/
+                break;
             case "Clock":
                 m_CurrentPuzzle = m_ClockPuzzle;
                 break;
@@ -141,9 +141,16 @@ public class PuzzleManager : MonoBehaviour
         m_MovePuzzleUp = true;
     }
 
-    public void PuzzleDown()
+    public void PuzzleDown(string Type)
     {
-        m_MovePuzzleDown = true;
-        AudioManager.Instance.PlayBGM();
+        if(Type == "Regular")
+        {
+            m_MovePuzzleDown = true;
+            AudioManager.Instance.PlayBGM();
+        }
+        else if(Type == "Final")
+        {
+            m_MovePuzzleDown = true;
+        }
     }
 }

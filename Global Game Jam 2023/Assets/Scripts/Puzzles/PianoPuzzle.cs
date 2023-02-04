@@ -142,7 +142,7 @@ public class PianoPuzzle : MonoBehaviour
             m_Solution10 = m_DummyNumber;
 
             Debug.Log("You did it!");
-            PuzzleManager.Instance.PuzzleDown();
+            PuzzleManager.Instance.PuzzleDown("Final");
             AudioManager.Instance.PianoPuzzleSolve();
             ResetPuzzle();
         }

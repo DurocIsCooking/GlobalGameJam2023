@@ -227,7 +227,7 @@ public class SafePuzzle : MonoBehaviour
     {
         if(m_Button1Value == m_Button1Solution && m_Button2Value == m_Button2Solution && m_Button3Value == m_Button3Solution && m_Button4Value == m_Button4Solution)
         {
-            PuzzleManager.Instance.PuzzleDown();
+            PuzzleManager.Instance.PuzzleDown("Regular");
             Debug.Log("You did it!");
         }
     }

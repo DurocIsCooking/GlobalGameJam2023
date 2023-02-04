@@ -39,6 +39,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip m_SFXTick;
     [SerializeField] private AudioClip m_SFXTock;
 
+    private bool m_TickLastPlayed;
+    private bool m_TockLastPlayed;
+
     [Header("SFX - Piano Keys")]
     [SerializeField] private AudioClip m_CKey;
     [SerializeField] private AudioClip m_CSharpDFlatKey;
@@ -89,6 +92,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        m_TockLastPlayed = true;
+
         //---SETS AND PLAYS THE INITIAL VOLUMES AND AUDIO CLIPS---//
 
         m_BGMOriginalVolume = m_BGMAudioSourceIntro.volume;
@@ -189,11 +194,19 @@ public class AudioManager : MonoBehaviour
             case "Click":
                 m_SFXAudioSource.PlayOneShot(m_SFXClick);
                 break;
-            case "Tick":
-                m_SFXAudioSource.PlayOneShot(m_SFXTick);
-                break;
-            case "Tock":
-                m_SFXAudioSource.PlayOneShot(m_SFXTock);
+            case "TickTock":
+                if(m_TockLastPlayed)
+                {
+                    m_TockLastPlayed = false;
+                    m_SFXAudioSource.PlayOneShot(m_SFXTick, 0.3f);
+                    m_TickLastPlayed = true;
+                }
+                else if (m_TickLastPlayed)
+                {
+                    m_TickLastPlayed = false;
+                    m_SFXAudioSource.PlayOneShot(m_SFXTock, 0.3f);
+                    m_TockLastPlayed = true;
+                }
                 break;
         }
     }
@@ -250,6 +263,6 @@ public class AudioManager : MonoBehaviour
         m_BGMAudioSourceLoop.Stop();                        //Stops the faded out loop.
         m_BGMAudioSourceLoop.clip = m_BGMFinal;             //Switches to the final track.
         m_BGMAudioSourceLoop.volume = m_BGMOriginalVolume;  //Resets the volume.
-        m_BGMAudioSourceLoop.Play();                        //Plays the final track.
+        m_BGMAudioSourceLoop.PlayDelayed(2.0f);             //Plays the final track.
     }
 }

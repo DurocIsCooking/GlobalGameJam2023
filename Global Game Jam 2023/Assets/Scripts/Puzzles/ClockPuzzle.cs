@@ -132,7 +132,7 @@ public class ClockPuzzle : MonoBehaviour
     {
         if(m_HourValue == m_HourSolution && m_MinuteValue == m_MinuteSolution)
         {
-            PuzzleManager.Instance.PuzzleDown();
+            PuzzleManager.Instance.PuzzleDown("Regular");
             Debug.Log("You did it!");
         }
     }
