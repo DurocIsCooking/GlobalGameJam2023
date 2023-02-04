@@ -141,9 +141,9 @@ public class PianoPuzzle : MonoBehaviour
             m_Solution10Check = true;
             m_Solution10 = m_DummyNumber;
 
-            Debug.Log("You did it!"); 
-            //This is where the BGM track should change to the final version of the Piano Puzzle + Exit piano view and the grandmother can say stuff. 
-            //Then credits?
+            Debug.Log("You did it!");
+            PuzzleManager.Instance.PuzzleDown();
+            AudioManager.Instance.PianoPuzzleSolve();
             ResetPuzzle();
         }
         else

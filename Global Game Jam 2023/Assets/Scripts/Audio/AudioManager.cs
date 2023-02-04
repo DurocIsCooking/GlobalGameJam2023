@@ -35,6 +35,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip m_SFXBook;
     [SerializeField] private AudioClip m_SFXKettle;
     [SerializeField] private AudioClip m_SFXTimeTravel;
+    [SerializeField] private AudioClip m_SFXClick;
+    [SerializeField] private AudioClip m_SFXTick;
+    [SerializeField] private AudioClip m_SFXTock;
 
     [Header("SFX - Piano Keys")]
     [SerializeField] private AudioClip m_CKey;
@@ -178,7 +181,19 @@ public class AudioManager : MonoBehaviour
                 m_SFXAudioSource.PlayOneShot(m_SFXBook);
                 break;
             case "Kettle":
+                m_SFXAudioSource.PlayOneShot(m_SFXKettle);
+                break;
+            case "Time Travel":
                 m_SFXAudioSource.PlayOneShot(m_SFXTimeTravel);
+                break;
+            case "Click":
+                m_SFXAudioSource.PlayOneShot(m_SFXClick);
+                break;
+            case "Tick":
+                m_SFXAudioSource.PlayOneShot(m_SFXTick);
+                break;
+            case "Tock":
+                m_SFXAudioSource.PlayOneShot(m_SFXTock);
                 break;
         }
     }
