@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
+    [Header("Exit")]
+    [SerializeField] private GameObject m_Exit;
+
     [Header("Puzzles")]
     [SerializeField] private GameObject m_SafePuzzle;
     [SerializeField] private GameObject m_GlyphPuzzle;
@@ -54,6 +58,8 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
+        m_Exit.SetActive(false);
+
         m_SafePuzzle.transform.position = m_OffScreen.position;
         m_GlyphPuzzle.transform.position = m_OffScreen.position;
         m_ClockPuzzle.transform.position = m_OffScreen.position;
@@ -138,6 +144,7 @@ public class PuzzleManager : MonoBehaviour
                 break;
         }
 
+        m_Exit.SetActive(true);
         m_MovePuzzleUp = true;
     }
 
@@ -152,5 +159,7 @@ public class PuzzleManager : MonoBehaviour
         {
             m_MovePuzzleDown = true;
         }
+
+        m_Exit.SetActive(false);
     }
 }
