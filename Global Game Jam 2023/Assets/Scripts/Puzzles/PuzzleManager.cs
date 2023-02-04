@@ -136,7 +136,6 @@ public class PuzzleManager : MonoBehaviour
 
                 m_DebugOffSwitch = false;
             }
-            GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
         }
     }
 
@@ -165,7 +164,8 @@ public class PuzzleManager : MonoBehaviour
 
     public void PuzzleDown(string Type)
     {
-        if(Type == "Regular")
+        GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        if (Type == "Regular")
         {
             m_MovePuzzleDown = true;
             AudioManager.Instance.PlayBGM();

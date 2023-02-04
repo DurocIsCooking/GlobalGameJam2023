@@ -20,6 +20,11 @@ public class SafePuzzle : MonoBehaviour
     [SerializeField] private int m_Button3Solution;
     [SerializeField] private int m_Button4Solution;
 
+    [SerializeField] private GameObject m_SafeSolutionTriggers;
+
+    public ItemGameObject BookArchaic;
+    public ItemGameObject MusicSheet1;
+
     public void Start()
     {
         m_Button1.text = "0";
@@ -227,8 +232,11 @@ public class SafePuzzle : MonoBehaviour
     {
         if(m_Button1Value == m_Button1Solution && m_Button2Value == m_Button2Solution && m_Button3Value == m_Button3Solution && m_Button4Value == m_Button4Solution)
         {
+            InventoryManager.Instance.AddItem(BookArchaic.Item);
+            InventoryManager.Instance.AddItem(MusicSheet1.Item);
             PuzzleManager.Instance.PuzzleDown("Regular");
             Debug.Log("You did it!");
+            m_SafeSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 }
