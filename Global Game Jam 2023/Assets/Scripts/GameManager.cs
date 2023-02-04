@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
 
     public void SwitchGameState(GameStates newGameState)
     {
+        if (newGameState == GameStates.Dialogue && InventoryManager.Instance.ItemInUse != null)
+        {
+            InventoryManager.Instance.ItemInUse.StopUsingItem();
+        }
         Debug.Log("Game state: " + newGameState.ToString());
         CurrentGameState = newGameState;
     }
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
     {
         PresentCamera.enabled = !PresentCamera.enabled;
         PastCamera.enabled = !PastCamera.enabled;
+        SwitchGameState(GameStates.FreePlay);
     }
 
 }

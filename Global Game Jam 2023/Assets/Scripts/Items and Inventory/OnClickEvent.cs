@@ -22,21 +22,23 @@ public class OnClickEvent : MonoBehaviour, IClickable
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
         {
             CheckForItemInteraction(InventoryManager.Instance.ItemInUse.Item);
+            return;
         }
 
         switch (EventType)
         {
-            case EventTypes.ItemInteraction:
-                if (GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
-                {
-                    CheckForItemInteraction(InventoryManager.Instance.ItemInUse.Item);
-                }
-                else
-                {
-                    // Some kind of default interaction I guess? Play default dialogue / SFX?
-                }
-                break;
+            //case EventTypes.ItemInteraction:
+            //    if (GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
+            //    {
+            //        CheckForItemInteraction(InventoryManager.Instance.ItemInUse.Item);
+            //    }
+            //    else
+            //    {
+            //        // Some kind of default interaction I guess? Play default dialogue / SFX?
+            //    }
+            //    break;
             case EventTypes.PopUp: // Safe, old box, piano
+                // TO DO: open minigame
                 GameManager.Instance.SwitchGameState(GameManager.GameStates.PopUp);
                 break;
             case EventTypes.Dialogue:
@@ -50,7 +52,7 @@ public class OnClickEvent : MonoBehaviour, IClickable
 
         
     }
-    //tenst
+
     public void CheckForItemInteraction(Item item)
     {
         if(item == null)
@@ -70,8 +72,7 @@ public class OnClickEvent : MonoBehaviour, IClickable
         }
         else
         {
-            // I guess do nothing? Maybe play a sound effect or do a lil animation?
-            // Maybe trigger dialogue that says "I don't think that works"?
+            DialogueManager.Instance.WrongItemDialogue();
         }
     }
 

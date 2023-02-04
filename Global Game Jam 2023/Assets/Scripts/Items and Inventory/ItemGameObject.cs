@@ -12,8 +12,11 @@ public class ItemGameObject : MonoBehaviour, IClickable
 
     private void Awake()
     {
-        GetComponent<SpriteRenderer>().sprite = Item.Sprite;
-
+        if(GetComponent<SpriteRenderer>() != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = Item.Sprite;
+        }
+        
         if(Item.PopUpSprite == null)
         {
             Item.PopUpSprite = Item.Sprite;

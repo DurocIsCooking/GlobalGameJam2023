@@ -35,8 +35,7 @@ public class ClickManager : MonoBehaviour
                     IClickable objectClicked2 = CheckForClickableObject();
                     if (objectClicked2 != null)
                     {
-                        
-                        InventoryManager.Instance.ItemInUse.transform.localScale = Vector3.one;
+                        InventoryManager.Instance.ItemInUse.transform.localScale = InventoryManager.Instance.SpriteScale * Vector3.one;
                         // Try item interaction
                         objectClicked2.OnClick();
                     }
