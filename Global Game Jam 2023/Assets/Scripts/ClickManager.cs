@@ -45,7 +45,7 @@ public class ClickManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
+            if(GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem || GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp)
             {
                 InventoryManager.Instance.ItemInUse.StopUsingItem();
             }

@@ -46,7 +46,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject _canvas;
     public float SpriteScale = 1;
     [Header("UI Screen Positions")]
-    [SerializeField] private Vector2 _firstItemPosition; // Position from the bottom left of the screen
+    [SerializeField] private Vector2 _firstItemPosition; // Position from the bottom left of the screen, in % of screen width
     [SerializeField] private float _itemPositionInterval; // Distance between items, in % of screen width
     
     // Creates item slots with the specified positions and scale.
@@ -76,13 +76,31 @@ public class InventoryManager : MonoBehaviour
             rectTransform.anchorMin = Vector2.zero;
             rectTransform.anchorMax = Vector2.zero;
 
+
+            RectTransform canvasTransform = _canvas.GetComponent<RectTransform>();
+
             // Calculate interval (distance between each item slot)
-            float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width / 100;
+            float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width * canvasTransform.localScale.x / 100; // might need to change
 
             // Set position
-            Vector2 position = new Vector2(_firstItemPosition.x + interval, _firstItemPosition.y);
+            
+            float xPos = _firstItemPosition.x * canvasTransform.localScale.x * canvasTransform.rect.width / 100;
+            float yPos = _firstItemPosition.y * canvasTransform.localScale.y * canvasTransform.rect.height / 100;
+            Vector2 position = new Vector2(xPos + interval, yPos);
             rectTransform.position = position;
 
+
+            //// Calculate interval (distance between each item slot)
+            //float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width / 100; // might need to change
+
+            //// Set position
+            //RectTransform canvasTransform = _canvas.GetComponent<RectTransform>();
+            //float xPos = _firstItemPosition.x * canvasTransform.localScale.x * canvasTransform.rect.width / 100;
+            //float yPos = _firstItemPosition.y * canvasTransform.localScale.y * canvasTransform.rect.height / 100;
+
+            //float xOffset = _canvas.GetComponent<RectTransform>().rect.width / 2;
+            //float yOffset = _canvas.GetComponent<RectTransform>().rect.height / 2;
+            //Vector2 position = new Vector2(xPos + interval - xOffset, yPos - yOffset);
 
             // 3) ADD ITEM SLOT TO LIST
 
@@ -161,17 +179,23 @@ public class InventoryManager : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
 
-        float itemCount = 0;
+        //float itemCount = 0;
 
         for (int i = 0; i < _numItemSlots; i++)
         {
             Gizmos.matrix = _canvas.transform.localToWorldMatrix;
-            float xOffset = _canvas.GetComponent<RectTransform>().rect.width / 2;
-            float yOffset = _canvas.GetComponent<RectTransform>().rect.height / 2;
-            float interval = _itemPositionInterval * itemCount * _canvas.GetComponent<RectTransform>().rect.width / 100;
-            Vector2 position = new Vector2(_firstItemPosition.x + interval - xOffset, _firstItemPosition.y - yOffset);
+            // Calculate interval (distance between each item slot)
+            float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width / 100; // might need to change
+
+            // Set position
+            RectTransform canvasTransform = _canvas.GetComponent<RectTransform>();
+            float xPos = _firstItemPosition.x * canvasTransform.rect.width / 100;
+            float yPos = _firstItemPosition.y * canvasTransform.rect.height / 100;
+
+            float xOffset = canvasTransform.rect.width / 2;
+            float yOffset = canvasTransform.rect.height / 2;
+            Vector2 position = new Vector2(xPos + interval - xOffset, yPos - yOffset);
             Gizmos.DrawCube(position, new Vector3(100, 100, 100) * SpriteScale);
-            itemCount += 1;
         }
     }
 }
