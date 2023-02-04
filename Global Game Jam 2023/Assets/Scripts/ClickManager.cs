@@ -20,10 +20,6 @@ public class ClickManager : MonoBehaviour
                 case GameManager.GameStates.Dialogue:
                     DialogueManager.Instance.ProgressDialogue();
                     break;
-                case GameManager.GameStates.PopUp:
-                    // Can only interact with pop-up
-                    break;
-
                 case GameManager.GameStates.FreePlay:
                     IClickable objectClicked = CheckForClickableObject();
                     if (objectClicked != null)

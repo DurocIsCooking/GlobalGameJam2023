@@ -7,8 +7,8 @@ public class OnClickEvent : MonoBehaviour, IClickable
 {
     public enum EventTypes
     {
-        ItemInteraction,
-        PopUp,
+        Default,
+        Puzzle,
         Dialogue
     }
     public EventTypes EventType;
@@ -33,19 +33,9 @@ public class OnClickEvent : MonoBehaviour, IClickable
 
         switch (EventType)
         {
-            //case EventTypes.ItemInteraction:
-            //    if (GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
-            //    {
-            //        CheckForItemInteraction(InventoryManager.Instance.ItemInUse.Item);
-            //    }
-            //    else
-            //    {
-            //        // Some kind of default interaction I guess? Play default dialogue / SFX?
-            //    }
-            //    break;
-            case EventTypes.PopUp: // Safe, old box, piano
-                // TO DO: open minigame
-                GameManager.Instance.SwitchGameState(GameManager.GameStates.PopUp);
+            case EventTypes.Puzzle: // Safe, old box, piano
+                EventToTrigger.Invoke();
+                GameManager.Instance.SwitchGameState(GameManager.GameStates.Puzzle);
                 break;
             case EventTypes.Dialogue:
                 if (GameManager.Instance.CurrentGameState == GameManager.GameStates.FreePlay)

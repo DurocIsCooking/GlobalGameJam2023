@@ -28,6 +28,7 @@ public class PuzzleManager : MonoBehaviour
     private int m_SpeedMultiplier;
     [SerializeField] private bool m_MovePuzzleUp;
     [SerializeField] private bool m_MovePuzzleDown;
+    
 
     //---SINGLETON---//
 
@@ -60,14 +61,20 @@ public class PuzzleManager : MonoBehaviour
     {
         m_Exit.SetActive(false);
 
+        m_CurrentPuzzle = null;
+
+        m_SpeedMultiplier = 100;
+
+        GameObject canvas = m_OnScreen.transform.parent.parent.parent.gameObject;
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+        m_OnScreen.position = new Vector3(canvasRect.rect.width/2, canvasRect.rect.height/2, 0) * canvasRect.localScale.x;
+        m_OffScreen.position = m_OnScreen.position + new Vector3(0, -700, 0);
+        m_Exit.GetComponent<RectTransform>().position = m_OnScreen.position + new Vector3(canvasRect.rect.width / 8, canvasRect.rect.height / 8, 0) * canvasRect.localScale.x;
+
         m_SafePuzzle.transform.position = m_OffScreen.position;
         m_GlyphPuzzle.transform.position = m_OffScreen.position;
         m_ClockPuzzle.transform.position = m_OffScreen.position;
         m_PianoPuzzle.transform.position = m_OffScreen.position;
-
-        m_CurrentPuzzle = null;
-
-        m_SpeedMultiplier = 100;
     }
 
     private void Update()
@@ -101,8 +108,11 @@ public class PuzzleManager : MonoBehaviour
         {
             m_CurrentPuzzle.transform.position = Vector3.MoveTowards(m_CurrentPuzzle.transform.position, m_OnScreen.position, m_Speed * m_SpeedMultiplier * Time.deltaTime);
 
-            if(m_CurrentPuzzle.transform.position == m_OnScreen.position)
+            Vector3 roundedPosition = new Vector3(Mathf.Round(m_CurrentPuzzle.transform.position.x), Mathf.Round(m_CurrentPuzzle.transform.position.y), 0);
+
+            if ((m_CurrentPuzzle.transform.position - m_OnScreen.position).magnitude <= 1)
             {
+                m_Exit.SetActive(true);
                 m_MovePuzzleUp = false;
 
                 m_DebugSafePuzzle = false;
@@ -114,14 +124,19 @@ public class PuzzleManager : MonoBehaviour
 
         if (m_MovePuzzleDown)
         {
+            Debug.Log("send puzzle down");
             m_CurrentPuzzle.transform.position = Vector3.MoveTowards(m_CurrentPuzzle.transform.position, m_OffScreen.position, m_Speed * m_SpeedMultiplier * Time.deltaTime);
 
-            if (m_CurrentPuzzle.transform.position == m_OffScreen.position)
+            Vector3 roundedPosition = new Vector3(Mathf.Round(m_CurrentPuzzle.transform.position.x), Mathf.Round(m_CurrentPuzzle.transform.position.y), 0);
+
+            if ((m_CurrentPuzzle.transform.position - m_OffScreen.position).magnitude <= 1)
             {
+                Debug.Log("Puzzle down complete");
                 m_MovePuzzleDown = false;
 
                 m_DebugOffSwitch = false;
             }
+            GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
         }
     }
 
@@ -144,7 +159,7 @@ public class PuzzleManager : MonoBehaviour
                 break;
         }
 
-        m_Exit.SetActive(true);
+        
         m_MovePuzzleUp = true;
     }
 

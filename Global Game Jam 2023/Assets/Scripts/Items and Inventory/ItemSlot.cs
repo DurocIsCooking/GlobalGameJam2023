@@ -23,11 +23,12 @@ public class ItemSlot : MonoBehaviour, IClickable
             return;
         }
 
-        // Can't interact with items while in dialogue mode
-        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Dialogue)
+        // Can't interact with items while in dialogue mode or puzzle mode
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Dialogue || GameManager.Instance.CurrentGameState == GameManager.GameStates.Puzzle)
         {
             return;
         }
+
 
         // If the player switches items, they stop using their current item
         if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp) // This could get buggy with minigames

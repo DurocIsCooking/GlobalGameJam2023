@@ -33,7 +33,8 @@ public class GameManager : MonoBehaviour
         FreePlay,
         Dialogue,
         UsingItem,
-        PopUp
+        PopUp,
+        Puzzle
     }
 
     public GameStates CurrentGameState;
