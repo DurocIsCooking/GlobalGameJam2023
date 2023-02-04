@@ -19,6 +19,12 @@ public class OnClickEvent : MonoBehaviour, IClickable
 
     public void OnClick()
     {
+
+        if(gameObject.GetComponent<ItemGameObject>() != null)
+        {
+            return;
+        }
+
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
         {
             CheckForItemInteraction(InventoryManager.Instance.ItemInUse.Item);

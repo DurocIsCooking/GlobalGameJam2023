@@ -1133,8 +1133,8 @@ MonoBehaviour:
   _numItemSlots: 10
   _canvas: {fileID: 310474013}
   SpriteScale: 0.4
-  _firstItemPosition: {x: 102.1, y: 38.73}
-  _itemPositionInterval: 8.5
+  _firstItemPosition: {x: 12, y: 7.5}
+  _itemPositionInterval: 8.4
 --- !u!4 &344919698
 Transform:
   m_ObjectHideFlags: 0
@@ -5041,6 +5041,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
+--- !u!1 &2121064347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4309433625461685415, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
+  m_PrefabInstance: {fileID: 951329400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2121064352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121064347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2121064353}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2121064353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121064347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - yum yum leaf
 --- !u!4 &2813722065198403054
 Transform:
   m_ObjectHideFlags: 0

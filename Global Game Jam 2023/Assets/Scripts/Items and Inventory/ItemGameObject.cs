@@ -31,9 +31,12 @@ public class ItemGameObject : MonoBehaviour, IClickable
 
     private void OnDestroy()
     {
-        //Destroy this
-            // Play sound effect
-            // Lil animation
+        if(gameObject.GetComponent<OnClickEvent>() != null)
+        {
+            gameObject.GetComponent<OnClickEvent>().EventToTrigger.Invoke();
+        }
+        // Play sound effect
+        // Lil animation
         Destroy(gameObject);
     }
 }

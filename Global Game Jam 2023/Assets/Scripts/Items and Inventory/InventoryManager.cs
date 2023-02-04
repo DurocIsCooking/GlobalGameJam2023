@@ -83,24 +83,10 @@ public class InventoryManager : MonoBehaviour
             float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width * canvasTransform.localScale.x / 100; // might need to change
 
             // Set position
-            
             float xPos = _firstItemPosition.x * canvasTransform.localScale.x * canvasTransform.rect.width / 100;
             float yPos = _firstItemPosition.y * canvasTransform.localScale.y * canvasTransform.rect.height / 100;
             Vector2 position = new Vector2(xPos + interval, yPos);
             rectTransform.position = position;
-
-
-            //// Calculate interval (distance between each item slot)
-            //float interval = _itemPositionInterval * i * _canvas.GetComponent<RectTransform>().rect.width / 100; // might need to change
-
-            //// Set position
-            //RectTransform canvasTransform = _canvas.GetComponent<RectTransform>();
-            //float xPos = _firstItemPosition.x * canvasTransform.localScale.x * canvasTransform.rect.width / 100;
-            //float yPos = _firstItemPosition.y * canvasTransform.localScale.y * canvasTransform.rect.height / 100;
-
-            //float xOffset = _canvas.GetComponent<RectTransform>().rect.width / 2;
-            //float yOffset = _canvas.GetComponent<RectTransform>().rect.height / 2;
-            //Vector2 position = new Vector2(xPos + interval - xOffset, yPos - yOffset);
 
             // 3) ADD ITEM SLOT TO LIST
 
@@ -178,8 +164,6 @@ public class InventoryManager : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-
-        //float itemCount = 0;
 
         for (int i = 0; i < _numItemSlots; i++)
         {
