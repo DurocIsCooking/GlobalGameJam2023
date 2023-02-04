@@ -16,20 +16,24 @@ public class ItemSlot : MonoBehaviour, IClickable
     }
 
     public void OnClick()
-    { 
-        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.Dialogue)
-        {
-            return;
-        }
-        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp)
-        {
-            InventoryManager.Instance.ItemInUse.StopUsingItem();
-        }
-        if(Item == null)
+    {
+        // if inventory slot is empty, return
+        if (Item == null)
         {
             return;
         }
 
+        // Can't interact with items while in dialogue mode
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Dialogue)
+        {
+            return;
+        }
+
+        // If the player switches items, they stop using their current item
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp) // This could get buggy with minigames
+        {
+            InventoryManager.Instance.ItemInUse.StopUsingItem();
+        }
         if(GameManager.Instance.CurrentGameState == GameManager.GameStates.UsingItem)
         {
             InventoryManager.Instance.ItemInUse.StopUsingItem();
@@ -50,8 +54,6 @@ public class ItemSlot : MonoBehaviour, IClickable
         // UI changes, to show that item is in use and to give the player a way to cancel action
         gameObject.transform.localScale = 2 * InventoryManager.Instance.SpriteScale * Vector3.one;
         _xButton.SetActive(true);
-
-        
     }
 
     public void StopUsingItem()
