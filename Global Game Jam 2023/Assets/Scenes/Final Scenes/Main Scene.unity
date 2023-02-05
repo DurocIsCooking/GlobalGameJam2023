@@ -4647,10 +4647,20 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 1
     Sentences:
-    - Oh...
-    - What a boppin tune!
-    - I used to hit the roller rinks to this sick beat.
-    - Thanks lil homie.
+    - Oh... this is... just like back then...
+    - "\u266B Hmm hm hmmmmm hmm hmmmmm \u266B"
+    - Thank you, Kiino. I remember it so clearly... for a moment there, it felt as
+      though I had been whisked away to the past. Imagine that, ohoho!
+    - ... ... ...
+    - Listen here, Kiino... there is no need to worry. Change is scary, but it is
+      necessary to more forward in life.
+    - Your Gran is so proud of you for taking that first step.
+    - There is no doubt in my mind that you will find where you belong in this big
+      wide forest.
+    - Of course, I'll miss my little Sprout, but don't worry about your old Gran.
+      She's tougher than you think!
+    - You'll always be welcome back here with open arms...
+    - This will always be your home.
 --- !u!1 &948215244
 GameObject:
   m_ObjectHideFlags: 0
