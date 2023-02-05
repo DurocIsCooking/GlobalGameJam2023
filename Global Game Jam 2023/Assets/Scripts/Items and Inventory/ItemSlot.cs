@@ -97,6 +97,7 @@ public class ItemSlot : MonoBehaviour, IClickable
 
     public void RemoveItem()
     {
+        StopUsingItem();
         Item = null;
         // Make slot transparent
         Image image = gameObject.GetComponent<Image>();

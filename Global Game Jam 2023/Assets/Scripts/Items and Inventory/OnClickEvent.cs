@@ -59,11 +59,12 @@ public class OnClickEvent : MonoBehaviour, IClickable
         if(item.Name == TriggeringItemName)
         {
             // Trigger an event
-            EventToTrigger.Invoke();
-            if(DestroyItemOnClick)
+            if (DestroyItemOnClick)
             {
                 InventoryManager.Instance.ItemInUse.RemoveItem();
             }
+            EventToTrigger.Invoke();
+            
         }
         else
         {
