@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GrowPlant : MonoBehaviour
 {
-    public GameObject FuturePlant;
-    public GameObject FutureCarpetSigils;
+    public GameObject PresentBackgroundNoPlant;
+    public GameObject PresentBackgroundWithPlant;
+
+    private void Awake()
+    {
+        PresentBackgroundNoPlant.SetActive(true);
+        PresentBackgroundWithPlant.SetActive(false);
+    }
 
     public void GrowFuturePlant()
     {
-        FuturePlant.SetActive(true);
-        FutureCarpetSigils.SetActive(true);
-        transform.GetChild(0).gameObject.SetActive(true);
+        PresentBackgroundNoPlant.SetActive(false);
+        PresentBackgroundWithPlant.SetActive(true);
     }
 }
