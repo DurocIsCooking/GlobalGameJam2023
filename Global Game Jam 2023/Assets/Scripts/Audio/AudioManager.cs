@@ -200,7 +200,7 @@ public class AudioManager : MonoBehaviour
                 m_SFXAudioSource.PlayOneShot(m_SFXKettle);
                 break;
             case "Time Travel":
-                m_SFXAudioSource.PlayOneShot(m_SFXTimeTravel);
+                m_SFXAudioSource.PlayOneShot(m_SFXTimeTravel, 0.7f);
                 break;
             case "Click":
                 m_SFXAudioSource.PlayOneShot(m_SFXClick, 0.5f);

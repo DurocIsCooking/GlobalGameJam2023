@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void TimeTravel()
     {
+        AudioManager.Instance.PlaySFX("Time Travel");
         PresentCamera.enabled = !PresentCamera.enabled;
         PastCamera.enabled = !PastCamera.enabled;
         SwitchGameState(GameStates.FreePlay);
