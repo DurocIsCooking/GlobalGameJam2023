@@ -70,7 +70,7 @@ public class PuzzleManager : MonoBehaviour
         GameObject canvas = m_OnScreen.transform.parent.parent.parent.gameObject;
         RectTransform canvasRect = canvas.GetComponent<RectTransform>();
         m_OnScreen.position = new Vector3(canvasRect.rect.width/2, canvasRect.rect.height/2, 0) * canvasRect.localScale.x;
-        m_OffScreen.position = m_OnScreen.position + new Vector3(0, -700, 0);
+        m_OffScreen.position = m_OnScreen.position + new Vector3(0, -1400, 0);
         m_Exit.GetComponent<RectTransform>().position = m_OnScreen.position + new Vector3(canvasRect.rect.width / 8, canvasRect.rect.height / 8, 0) * canvasRect.localScale.x;
 
         m_SafePuzzle.transform.position = m_OffScreen.position;
