@@ -141,10 +141,16 @@ public class PianoPuzzle : MonoBehaviour
             m_Solution10Check = true;
             m_Solution10 = m_DummyNumber;
 
+            // Song starts playing automatically after 2s
+            // Grandma dialogue
+            // Fade to black
+            // Credits
+
             Debug.Log("You did it!");
             PuzzleManager.Instance.PuzzleDown("Final");
             AudioManager.Instance.PianoPuzzleSolve();
             ResetPuzzle();
+            StartCoroutine(GameManager.Instance.GameEnd());
         }
         else
         {
