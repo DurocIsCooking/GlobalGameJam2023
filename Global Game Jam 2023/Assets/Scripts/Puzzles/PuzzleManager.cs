@@ -154,7 +154,7 @@ public class PuzzleManager : MonoBehaviour
                 m_CurrentPuzzle = m_SafePuzzle;
                 break;
             case "Cypher":
-                m_CurrentPuzzle = m_GlyphPuzzle;
+                m_CurrentPuzzle = m_CypherPuzzle;
                 break;
             case "Glyph":
                 m_CurrentPuzzle = m_GlyphPuzzle;

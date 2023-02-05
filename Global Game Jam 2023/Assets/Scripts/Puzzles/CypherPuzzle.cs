@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+//using TMPro;
 
 public class CypherPuzzle : MonoBehaviour
 {
     [SerializeField] private GameObject IncorrectMessage;
     //public TextMeshProUGUI InputText;
     [SerializeField] private Text m_Input;
+    [SerializeField] private InputField m_InputField;
     [SerializeField] private string m_Solution;
 
     private void Awake()
@@ -44,6 +45,8 @@ public class CypherPuzzle : MonoBehaviour
         else
         {
             IncorrectMessage.SetActive(true);
+            m_InputField.text = "";
+            m_InputField.ActivateInputField();
             Debug.Log("Hmm...");
         }
     }
