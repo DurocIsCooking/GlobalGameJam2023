@@ -365,14 +365,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54652831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.862938, y: -0.44304198, z: -0.21624586}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.86294, y: -0.44304174, z: -0.21624586}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1026973323}
   - {fileID: 2813722065976448759}
-  - {fileID: 2813722065972072534}
   - {fileID: 737372780}
   - {fileID: 468974911}
   - {fileID: 2078333332}
@@ -380,6 +379,8 @@ Transform:
   - {fileID: 1118288111}
   - {fileID: 1722128022}
   - {fileID: 1671836036}
+  - {fileID: 865061203}
+  - {fileID: 1898370904}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -569,7 +570,8 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Ohhh there's STUFF in the kettle! A seed... and music. Woaahhhh
+    - Oh! There's a seed in here, and a crumpled sheet of music.
+    - It's little wrinkly, but still readable.
 --- !u!114 &162672374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214324107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 460.50012, y: 259.00006, z: 0}
+  m_LocalPosition: {x: 482.2, y: 190.2, z: 0}
   m_LocalScale: {x: 0.94364756, y: 0.94364756, z: 0.94364756}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1910,6 +1912,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
   m_PrefabInstance: {fileID: 1343128968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &400998607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400998608}
+  - component: {fileID: 400998611}
+  - component: {fileID: 400998610}
+  - component: {fileID: 400998609}
+  m_Layer: 0
+  m_Name: Piano Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400998608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400998607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.24, y: 1.35, z: 0.02022171}
+  m_LocalScale: {x: 0.8859375, y: 0.7625, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400998609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400998607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - The piano.Yikes, it's seriously out of tune.
+--- !u!114 &400998610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400998607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 400998609}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &400998611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400998607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &419244981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2269,114 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520882062}
   m_CullTransparentMesh: 1
+--- !u!1 &521464292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521464293}
+  - component: {fileID: 521464296}
+  - component: {fileID: 521464295}
+  - component: {fileID: 521464294}
+  m_Layer: 0
+  m_Name: Clock Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521464293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521464292}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16.36, y: 3.32, z: 0.02022171}
+  m_LocalScale: {x: 0.55555665, y: 3.9364064, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &521464294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521464292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - It's the Grandfather clock. It looks like it's not working right now...
+    - Grandfather was always handy at fixing these kind of things. I guess that's
+      why its working in the present...
+--- !u!114 &521464295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521464292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 521464294}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &521464296
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521464292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &534061156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.6, y: -8.7}
+  m_AnchoredPosition: {x: -18.6, y: -58.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534061158
@@ -3160,11 +3376,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2813722065198403054}
+  - {fileID: 1091410279}
+  - {fileID: 1293995174}
   - {fileID: 1102141691}
-  - {fileID: 2813722066007801184}
   - {fileID: 1952761284}
   - {fileID: 1089918450}
+  - {fileID: 1826724175}
+  - {fileID: 521464293}
+  - {fileID: 1707945371}
+  - {fileID: 400998608}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3659,7 +3879,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54652832}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &737372781
 BoxCollider2D:
@@ -3795,7 +4015,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - I don't think I have time to grow that...
+    - I don't think I have time to grow that... I'm leaving tomorrow.
 --- !u!1 &755444309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,7 +4239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47.7, y: -18.7}
+  m_AnchoredPosition: {x: -79.9, y: -12.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &776138427
@@ -4071,8 +4291,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4107,7 +4327,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.851204, y: 0, z: -91.567825, w: -58.19896}
+  m_margin: {x: 7.851242, y: 0, z: -151.20705, w: 24.89691}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4553,7 +4773,7 @@ RectTransform:
   m_GameObject: {fileID: 851665151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1659375, y: 1.2375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321696778}
@@ -4563,8 +4783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160.99994, y: 130.89508}
-  m_SizeDelta: {x: 300, y: 29.5899}
+  m_AnchoredPosition: {x: 133.91, y: 41.993}
+  m_SizeDelta: {x: 349.2274, y: 29.5899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851665153
 MonoBehaviour:
@@ -4680,6 +4900,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853092266}
   m_CullTransparentMesh: 1
+--- !u!1 &865061202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865061203}
+  - component: {fileID: 865061206}
+  - component: {fileID: 865061205}
+  - component: {fileID: 865061204}
+  m_Layer: 0
+  m_Name: Grandma Present
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &865061203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865061202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29.99, y: -0.96361, z: 0}
+  m_LocalScale: {x: 0.88790625, y: 2.5914989, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 54652832}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &865061204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865061202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 1
+    Sentences:
+    - Alright! No more distractions. Get on packing, Sprout!
+--- !u!114 &865061205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865061202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 865061204}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &865061206
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865061202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &890130452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,7 +5162,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275125338}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &934810377
 MonoBehaviour:
@@ -5084,15 +5410,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.61
+      value: 2.33
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5688,6 +6014,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
   m_PrefabInstance: {fileID: 1319198878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1091410278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091410279}
+  - component: {fileID: 1091410282}
+  - component: {fileID: 1091410281}
+  - component: {fileID: 1091410280}
+  m_Layer: 0
+  m_Name: Kettle Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091410279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091410278}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.34, y: 2.1221, z: 0.02022171}
+  m_LocalScale: {x: 0.511875, y: 1.2038193, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1091410280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091410278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - OUCH! It's WAY too hot to touch. I should NOT do that again.
+--- !u!114 &1091410281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091410278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1091410280}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &1091410282
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091410278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &1102141690
 GameObject:
   m_ObjectHideFlags: 0
@@ -5721,7 +6153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 678018610}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1102141692
 MonoBehaviour:
@@ -5822,7 +6254,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - SHEEEESH let's grow some SEEDS
+    - A pot for plants and seeds, to grow delicious vegetables and beautiful flowers!
 --- !u!1 &1105921744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,7 +6363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54652832}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1118288112
 MonoBehaviour:
@@ -6132,6 +6564,70 @@ Transform:
   m_Father: {fileID: 310474017}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209075859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209075860}
+  - component: {fileID: 1209075861}
+  m_Layer: 0
+  m_Name: Opening Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1209075860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209075859}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -434.1575, y: -242.61856, z: -11.66698}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1275125338}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209075861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209075859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 1
+    Sentences:
+    - Oho, Kiino; good morning! Or, I suppose I should say good afternoon... ohoho!
+    - ... ... ...
+    - You can't hide anything from these old eyes, dear; you were up late packing
+      last night, weren't you?
+    - You ought to pick up the pace, Sprout! The Moving Moths will be here around
+      this time tomorrow.
+    - Now now, don't fret, I'll stay right here and keep you company while you wrap
+      up with your packing.
+    - ...Say, Kiino... take that old Beetle Pocketwatch with you, won't you?
+    - It stopped working, but it was your Grandfathers. You should have it.
+    - ' If you get lonely, open it, and you will surely feel closer to your roots.'
+    - One other thing, if you'll indulge your old Gran...
+    - Your Grandfather used to play me this beautiful song... before he...
+    - "\r... ... ...\r\n"
+    - I just... I would very much like to hear that song again... if you happen to
+      find it while you're packing.
+    - Alright! No more distractions. Get on packing, Sprout!
 --- !u!1 &1266601260
 GameObject:
   m_ObjectHideFlags: 0
@@ -6179,7 +6675,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - it's grandma's pot. Doesn't seem like she's using it.
+    - A pot for plants! Growing something now would be pointless... I'm leaving tomorrow.
 --- !u!1 &1271326657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6344,6 +6840,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1209075860}
   - {fileID: 934810376}
   m_Father: {fileID: 779879941}
   m_RootOrder: 1
@@ -6501,6 +6998,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289827245}
   m_CullTransparentMesh: 1
+--- !u!1 &1293995173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1293995174}
+  - component: {fileID: 1293995177}
+  - component: {fileID: 1293995176}
+  - component: {fileID: 1293995175}
+  m_Layer: 0
+  m_Name: Fireplace Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1293995174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293995173}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.23, y: -0.96, z: 0.02022171}
+  m_LocalScale: {x: 0.7875, y: 0.7625, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1293995175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293995173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - The fire is roaring! I should keep my distance.
+--- !u!114 &1293995176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293995173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1293995175}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &1293995177
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293995173}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &1303780493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6650,6 +7253,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
+--- !u!1 &1319198879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4309433625461685415, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
+  m_PrefabInstance: {fileID: 1319198878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1319198880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319198879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - Huh, this looks familiar... The caterpillar is blocking the first half of the
+      code.
 --- !u!1 &1321696777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6685,7 +7310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.2, y: 19.2}
+  m_AnchoredPosition: {x: -83.4, y: 19.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321696779
@@ -6771,7 +7396,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.851204, y: 0, z: -91.020966, w: 0}
+  m_margin: {x: 7.851204, y: 0, z: -96.62407, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7992,7 +8617,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - 
+    - This book seriously slaps. I can't understand the script at the bottom, though.
 --- !u!4 &1631188474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
@@ -8125,7 +8750,7 @@ Transform:
   - {fileID: 2118301611}
   - {fileID: 1683711702}
   m_Father: {fileID: 54652832}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683711701
 GameObject:
@@ -8282,6 +8907,113 @@ MonoBehaviour:
   PastCamera: {fileID: 38232779}
   FadeToBlack: {fileID: 1105921746}
   CurrentGameState: 0
+--- !u!1 &1707945370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707945371}
+  - component: {fileID: 1707945374}
+  - component: {fileID: 1707945373}
+  - component: {fileID: 1707945372}
+  m_Layer: 0
+  m_Name: Window Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1707945371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707945370}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.63, y: 5.66, z: 0.02022171}
+  m_LocalScale: {x: 0.7078338, y: 1.6639216, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707945372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707945370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - The sepia filter makes it look overcast outside... ha, just kidding! There
+      is no sepia filter in real life.
+--- !u!114 &1707945373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707945370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1707945372}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &1707945374
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707945370}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &1709214545
 GameObject:
   m_ObjectHideFlags: 0
@@ -8611,7 +9343,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54652832}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1722128023
 MonoBehaviour:
@@ -9150,8 +9882,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9237,7 +9969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75, y: 20}
+  m_AnchoredPosition: {x: 75, y: -32.8}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770520604
@@ -9674,6 +10406,113 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820906519}
   m_CullTransparentMesh: 1
+--- !u!1 &1826724174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826724175}
+  - component: {fileID: 1826724178}
+  - component: {fileID: 1826724177}
+  - component: {fileID: 1826724176}
+  m_Layer: 0
+  m_Name: Chandelier Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1826724175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826724174}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.4, y: 6.526107, z: 0.02022171}
+  m_LocalScale: {x: 0.7033281, y: 1.6639217, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826724176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826724174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - This is still here, huh? I wonder if Grandfather gave it as a gift to Gran,
+      and that's why she's kept it so long.
+--- !u!114 &1826724177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826724174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1826724176}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &1826724178
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826724174}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1001 &1828470376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10194,7 +11033,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54652832}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1890785631
 MonoBehaviour:
@@ -10251,6 +11090,112 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890785629}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
+--- !u!1 &1898370903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1898370904}
+  - component: {fileID: 1898370907}
+  - component: {fileID: 1898370906}
+  - component: {fileID: 1898370905}
+  m_Layer: 0
+  m_Name: Image Present
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1898370904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898370903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.267, y: 3.69, z: 0}
+  m_LocalScale: {x: 0.30912432, y: 0.9567549, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 54652832}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898370905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898370903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - It's me and Gran! Dang, I look good.
+--- !u!114 &1898370906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898370903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1898370905}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &1898370907
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898370903}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -10599,7 +11544,7 @@ GameObject:
   - component: {fileID: 1952761286}
   - component: {fileID: 1952761285}
   m_Layer: 0
-  m_Name: PastCarpet
+  m_Name: Waterspout Past
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10613,8 +11558,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952761283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.64, y: -4.003894, z: 0.23646757}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -30.53, y: -1.22, z: 0.23646757}
+  m_LocalScale: {x: -0.22500001, y: 6.452031, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 678018610}
@@ -10635,7 +11580,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - It's that musty old carpet that Grandma keeps around for some reason.
+    - Still the same old waterspout!
 --- !u!114 &1952761286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11255,12 +12200,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078333331}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.792, y: -0.45673, z: 0}
+  m_LocalPosition: {x: 20.91, y: -0.45673, z: 0}
   m_LocalScale: {x: 0.7875, y: 0.7625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54652832}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2078333333
 MonoBehaviour:
@@ -11485,11 +12430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.02
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.24
+      value: -4.51
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11497,19 +12442,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9939056
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.11023438
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11521,7 +12466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 12.658
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685401, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -16537,36 +17482,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2813722065198403054
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433626108260318}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.933094, y: 1.0207474, z: 0.23646757}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 678018610}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2813722065972072534
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625741079142}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.38, y: -3.41, z: 0.21624586}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 54652832}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2813722065976448759
 Transform:
   m_ObjectHideFlags: 0
@@ -16583,21 +17498,6 @@ Transform:
   - {fileID: 1266601261}
   m_Father: {fileID: 54652832}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2813722066007801184
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625289989968}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.903095, y: -0.3592525, z: 0.23646757}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 678018610}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2813722066943768856
 Transform:
@@ -16633,76 +17533,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &4309433625289989968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2813722066007801184}
-  - component: {fileID: 4309433625289989998}
-  - component: {fileID: 4309433625289989999}
-  m_Layer: 0
-  m_Name: ClockPast
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &4309433625289989998
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625289989968}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.018072128, y: -0.026677847}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.46, y: 9.7}
-    newSize: {x: 5.46, y: 9.7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.3958702, y: 7.9083314}
-  m_EdgeRadius: 0
---- !u!61 &4309433625289989999
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625289989968}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.05421543, y: 6.017933}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7.9034557, y: 4.433655}
-  m_EdgeRadius: 0
 --- !u!1 &4309433625728677063
 GameObject:
   m_ObjectHideFlags: 0
@@ -16792,94 +17622,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!61 &4309433625741079128
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625741079142}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.28526068, y: 0.16272986}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.4, y: 7.87}
-    newSize: {x: 8.4, y: 7.87}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.238383, y: 1.0196116}
-  m_EdgeRadius: 0
---- !u!1 &4309433625741079142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2813722065972072534}
-  - component: {fileID: 4309433625741079128}
-  - component: {fileID: 8590443793836647452}
-  - component: {fileID: 8590443793836647451}
-  m_Layer: 0
-  m_Name: Carpet Present
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &4309433626108260318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2813722065198403054}
-  - component: {fileID: 4309433626108260320}
-  m_Layer: 0
-  m_Name: KettlePast
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &4309433626108260320
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433626108260318}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.18155289, y: -0.012968183}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.203125, y: 2.1992188}
-    newSize: {x: 5.64, y: 5.63}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.1368256, y: 3.055113}
-  m_EdgeRadius: 0
 --- !u!212 &8590443792798731604
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16932,49 +17674,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8590443793836647451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625741079142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    CharacterSpeaking: 0
-    Sentences:
-    - It's that musty old carpet that Grandma keeps around for some reason.
---- !u!114 &8590443793836647452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625741079142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventType: 2
-  TriggeringItemName: 
-  DestroyItemOnClick: 0
-  EventToTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8590443793836647451}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
