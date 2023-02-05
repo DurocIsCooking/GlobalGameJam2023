@@ -203,7 +203,7 @@ public class AudioManager : MonoBehaviour
                 m_SFXAudioSource.PlayOneShot(m_SFXTimeTravel);
                 break;
             case "Click":
-                m_SFXAudioSource.PlayOneShot(m_SFXClick);
+                m_SFXAudioSource.PlayOneShot(m_SFXClick, 0.5f);
                 break;
             case "TickTock":
                 if(m_TockLastPlayed)

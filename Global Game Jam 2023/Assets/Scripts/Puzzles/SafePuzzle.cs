@@ -226,7 +226,7 @@ public class SafePuzzle : MonoBehaviour
             }
         }
 
-        SafeSolution();
+        //SafeSolution();
     }
 
     public void SafeSolution()
@@ -243,6 +243,10 @@ public class SafePuzzle : MonoBehaviour
             PuzzleManager.Instance.PuzzleDown("Regular");
             // Trigger dialogue
             m_SafeSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
+        }
+        else
+        {
+            Debug.Log("REPRIMAND: INCORRECT INPUT, MEATBAG.");
         }
     }
 }

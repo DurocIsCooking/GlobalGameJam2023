@@ -123,10 +123,10 @@ public class GlyphPuzzle : MonoBehaviour
             }
         }
 
-        GlyphSolution();
+        //GlyphSolution();
     }
 
-    private void GlyphSolution()
+    public void GlyphSolution()
     {
         if(m_Dial1Value == m_Dial1Solution && m_Dial2Value == m_Dial2Solution && m_Dial3Value == m_Dial3Solution)
         {
@@ -139,6 +139,10 @@ public class GlyphPuzzle : MonoBehaviour
             PuzzleManager.Instance.PuzzleDown("Regular");
             // Trigger dialogue
             m_GlyphSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
+        }
+        else
+        {
+            Debug.Log("REPRIMAND: INCORRECT INPUT, MEATBAG.");
         }
     }
 }
