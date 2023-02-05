@@ -121,8 +121,8 @@ public class DialogueManager : MonoBehaviour
             if(_currentTypingDelay != 0)
             {
                 AudioManager.Instance.PlayVoice(_characterSpeaking.ToString());
+                yield return new WaitForSeconds(_currentTypingDelay);
             }
-            yield return new WaitForSeconds(_currentTypingDelay);
         }
         _isTypingSentence = false;
     }
