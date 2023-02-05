@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip m_BGMLoop;
     [SerializeField] private AudioClip m_BGMFinal;
     private float m_BGMOriginalVolume;
+    [SerializeField] private int m_CurrentBGM;
 
     [SerializeField] private float m_FadeSpeed;
     [SerializeField] private bool m_FadeIn;
@@ -173,6 +174,22 @@ public class AudioManager : MonoBehaviour
         m_FadeOut = true;
     }
 
+    public void RestartBGM()        //This doesn't work for some reason. FIX IT EVENTUALLY.
+    {
+        if (m_CurrentBGM == 2)
+        {
+            m_BGMAudioSourceIntro.Stop();
+            m_BGMAudioSourceLoop.Stop();
+
+            m_BGMAudioSourceLoop.clip = m_BGMLoop;
+
+            m_BGMAudioSourceIntro.Play();
+            m_BGMAudioSourceLoop.PlayDelayed(m_BGMAudioSourceIntro.clip.length);
+        }
+
+        m_CurrentBGM = 1;
+    }
+
     //---SFX---//
 
     public void PlaySFX(string SFX)
@@ -302,6 +319,7 @@ public class AudioManager : MonoBehaviour
 
     public void PianoPuzzleSolve()
     {
+        m_CurrentBGM = 2;
         m_BGMAudioSourceLoop.Stop();                        //Stops the faded out loop.
         m_BGMAudioSourceLoop.clip = m_BGMFinal;             //Switches to the final track.
         m_BGMAudioSourceLoop.volume = m_BGMOriginalVolume;  //Resets the volume.
