@@ -669,6 +669,7 @@ MonoBehaviour:
     PopUpEvent:
       m_PersistentCalls:
         m_Calls: []
+    PuzzleName: 
 --- !u!1001 &284017013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2409,6 +2410,7 @@ MonoBehaviour:
     PopUpEvent:
       m_PersistentCalls:
         m_Calls: []
+    PuzzleName: 
 --- !u!1 &760395510
 GameObject:
   m_ObjectHideFlags: 0
@@ -13084,8 +13086,8 @@ MonoBehaviour:
   m_AKey: {fileID: 8300000, guid: cd8a1d1c121ad7d44b054043c8fdf03a, type: 3}
   m_ASharpBFlatKey: {fileID: 8300000, guid: 6a4569d184ad9ec4799857d1b2aecbb4, type: 3}
   m_BKey: {fileID: 8300000, guid: f90d57033fc274e448b6af84cc1f685d, type: 3}
-  m_Voice_Potello: {fileID: 8300000, guid: 577c5b23b4c6c15498e2cb502e3a1d23, type: 3}
-  m_Voice_Kiino: {fileID: 8300000, guid: a783681274711d3428fd03f8ca750be7, type: 3}
+  m_Voice_Potello: {fileID: 8300000, guid: 9e17d0425fef0664ba555812fde5b089, type: 3}
+  m_Voice_Kiino: {fileID: 8300000, guid: 39a5e4bfb6187b24083ca8bc9f1d704c, type: 3}
 --- !u!1 &4440057345741937999
 GameObject:
   m_ObjectHideFlags: 0

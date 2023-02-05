@@ -239,34 +239,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoice(string Character)
     {
-        m_SFXAudioSource.volume = 0.3f;
-
         switch (Character)
         {
             case "Potello":
-
-                if(m_PreviousSFX == "Potello")
-                {
-                    m_SFXAudioSource.Stop();
-                }
-
-                m_SFXAudioSource.clip = m_Voice_Potello;
-                m_SFXAudioSource.Play();
+                m_SFXAudioSource.PlayOneShot(m_Voice_Potello, 0.6f);
                 break;
 
             case "Kiino":
-
-                if(m_PreviousSFX == "Kiino")
-                {
-                    m_SFXAudioSource.Stop();
-                }
-
-                m_SFXAudioSource.clip = m_Voice_Kiino;
-                m_SFXAudioSource.Play();
+                m_SFXAudioSource.PlayOneShot(m_Voice_Kiino, 0.6f);
                 break;
         }
-
-        m_PreviousSFX = Character;
     }
 
     //---PIANO FUNCTIONALITY---//
