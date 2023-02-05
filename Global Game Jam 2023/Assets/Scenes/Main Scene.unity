@@ -13066,12 +13066,12 @@ MonoBehaviour:
   m_SFXPaper: {fileID: 8300000, guid: 7c3f3fcf9e0d1184d98988b64c88b870, type: 3}
   m_SFXBook: {fileID: 8300000, guid: 7c3f3fcf9e0d1184d98988b64c88b870, type: 3}
   m_SFXKettle: {fileID: 8300000, guid: c839658e8dd5b004698de6b292f3da52, type: 3}
-  m_SFXTimeTravel: {fileID: 0}
+  m_SFXTimeTravel: {fileID: 8300000, guid: 93d34c4c11ffd0d4c874c83c001f8052, type: 3}
   m_SFXClick: {fileID: 8300000, guid: 0951ecfd703fcfa4aa2f069cf0d2c3d2, type: 3}
   m_SFXTick: {fileID: 8300000, guid: 363566413eed6bd4d9ae54172528d049, type: 3}
   m_SFXTock: {fileID: 8300000, guid: 52b9a0ee99f35e448aa537f4724de228, type: 3}
-  m_MenuClick: {fileID: 0}
-  m_MenuHover: {fileID: 0}
+  m_MenuClick: {fileID: 8300000, guid: 6a9a9580ac1ff754995a3e3ac20c412c, type: 3}
+  m_MenuHover: {fileID: 8300000, guid: 2ce6fe4a29b35b14ab223e6afbd0fcec, type: 3}
   m_CKey: {fileID: 8300000, guid: 865af2e40f6d7d74fb8746ba18dd3886, type: 3}
   m_CSharpDFlatKey: {fileID: 8300000, guid: 28aa71a61758c7f42ac56ed6d3f92b3a, type: 3}
   m_DKey: {fileID: 8300000, guid: 5c0187eb96560dc439c91f89694afd87, type: 3}
@@ -13084,8 +13084,8 @@ MonoBehaviour:
   m_AKey: {fileID: 8300000, guid: cd8a1d1c121ad7d44b054043c8fdf03a, type: 3}
   m_ASharpBFlatKey: {fileID: 8300000, guid: 6a4569d184ad9ec4799857d1b2aecbb4, type: 3}
   m_BKey: {fileID: 8300000, guid: f90d57033fc274e448b6af84cc1f685d, type: 3}
-  m_Voice_Potello: {fileID: 0}
-  m_Voice_Kiino: {fileID: 0}
+  m_Voice_Potello: {fileID: 8300000, guid: 577c5b23b4c6c15498e2cb502e3a1d23, type: 3}
+  m_Voice_Kiino: {fileID: 8300000, guid: a783681274711d3428fd03f8ca750be7, type: 3}
 --- !u!1 &4440057345741937999
 GameObject:
   m_ObjectHideFlags: 0
