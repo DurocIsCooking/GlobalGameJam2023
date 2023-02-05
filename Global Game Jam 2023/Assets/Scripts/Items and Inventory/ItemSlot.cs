@@ -29,6 +29,10 @@ public class ItemSlot : MonoBehaviour, IClickable
             return;
         }
 
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.Cutscene)
+        {
+            return;
+        }    
 
         // If the player switches items, they stop using their current item
         if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp) // This could get buggy with minigames

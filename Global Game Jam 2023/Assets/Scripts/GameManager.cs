@@ -21,11 +21,15 @@ public class GameManager : MonoBehaviour
         CurrentGameState = GameStates.FreePlay;
         PresentCamera.enabled = true;
         PastCamera.enabled = false;
+        Color tempColor = FadeToBlack.color;
+        tempColor.a = 0;
+        FadeToBlack.color = tempColor;
+        FadeToBlack.gameObject.SetActive(false);
     }
 
     public Camera PresentCamera;
     public Camera PastCamera;
-
+    public Image FadeToBlack;
     
 
     public enum GameStates
@@ -34,7 +38,8 @@ public class GameManager : MonoBehaviour
         Dialogue,
         UsingItem,
         PopUp,
-        Puzzle
+        Puzzle,
+        Cutscene
     }
 
     public GameStates CurrentGameState;
@@ -56,4 +61,34 @@ public class GameManager : MonoBehaviour
         SwitchGameState(GameStates.FreePlay);
     }
 
+    public IEnumerator GameEnd()
+    {
+        SwitchGameState(GameStates.Cutscene);
+        yield return new WaitForSeconds(5);
+        // Trigger grandma's dialogue;
+        gameObject.transform.GetChild(0).GetComponent<DialogueTrigger>().TriggerDialogue();
+        yield return new WaitUntil(FinalDialogueComplete);
+        SwitchGameState(GameStates.Cutscene);
+        yield return new WaitForSeconds(2);
+        FadeToBlack.gameObject.SetActive(true);
+        FadeToBlack.gameObject.transform.SetAsLastSibling();
+        while (FadeToBlack.color.a < 1)
+        {
+            Color tempColor = FadeToBlack.color;
+            tempColor.a += 0.05f;
+            FadeToBlack.color = tempColor;
+            yield return new WaitForSeconds(0.2f);
+        }
+        Debug.Log("Roll credits");
+        yield break;
+    }
+
+    public bool FinalDialogueComplete()
+    {
+        if (CurrentGameState != GameStates.Dialogue)
+        {
+            return true;
+        }
+        else return false;
+    }
 }
