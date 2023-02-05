@@ -19,7 +19,7 @@ public class SafePuzzle : MonoBehaviour
     [SerializeField] private int m_Button2Solution;
     [SerializeField] private int m_Button3Solution;
     [SerializeField] private int m_Button4Solution;
-
+    [Header("Object References")]
     [SerializeField] private GameObject m_SafeGameObject;
     [SerializeField] private GameObject m_SafeSolutionTriggers;
 

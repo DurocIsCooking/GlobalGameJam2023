@@ -34,6 +34,11 @@ public class GlyphPuzzle : MonoBehaviour
     private int m_Dial2Solution;
     private int m_Dial3Solution;
 
+    [Header("Object References")]
+    [SerializeField] private GameObject m_ClockGameObject;
+    [SerializeField] private GameObject m_GlyphSolutionTriggers;
+    public ItemGameObject MusicSheet2;
+
     public void Start()
     {
         m_Dial1.GetComponent<Image>().sprite = m_Glyph1;
@@ -125,8 +130,15 @@ public class GlyphPuzzle : MonoBehaviour
     {
         if(m_Dial1Value == m_Dial1Solution && m_Dial2Value == m_Dial2Solution && m_Dial3Value == m_Dial3Solution)
         {
+            // Add items
+            InventoryManager.Instance.AddItem(MusicSheet2.Item);
+            // Switch safe triggers
+            m_ClockGameObject.transform.GetChild(0).gameObject.SetActive(false);
+            m_ClockGameObject.transform.GetChild(1).gameObject.SetActive(true);
+            // Banish puzzle
             PuzzleManager.Instance.PuzzleDown("Regular");
-            Debug.Log("You did it!");
+            // Trigger dialogue
+            m_GlyphSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 }

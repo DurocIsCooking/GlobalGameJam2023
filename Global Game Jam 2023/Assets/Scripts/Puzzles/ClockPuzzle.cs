@@ -12,6 +12,11 @@ public class ClockPuzzle : MonoBehaviour
     [SerializeField] private int m_HourSolution;
     [SerializeField] private int m_MinuteSolution;
 
+    [Header("Object References")]
+    [SerializeField] private GameObject m_ClockGameObject;
+    [SerializeField] private GameObject m_ClockSolutionTriggers;
+    public ItemGameObject MusicSheet3;
+
     public void Start()
     {
         m_HourValue = 12;
@@ -132,8 +137,15 @@ public class ClockPuzzle : MonoBehaviour
     {
         if(m_HourValue == m_HourSolution && m_MinuteValue == m_MinuteSolution)
         {
+            // Add items
+            InventoryManager.Instance.AddItem(MusicSheet3.Item);
+            // Switch safe triggers
+            m_ClockGameObject.transform.GetChild(1).gameObject.SetActive(false);
+            m_ClockGameObject.transform.GetChild(2).gameObject.SetActive(true);
+            // Banish puzzle
             PuzzleManager.Instance.PuzzleDown("Regular");
-            Debug.Log("You did it!");
+            // Trigger dialogue
+            m_ClockSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 }
