@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/Start Menu.unity
     guid: bc9cf8f99a501a24f836439baeec1022
   - enabled: 1
-    path: Assets/Scenes/Main Scene.unity
-    guid: c793d1811a39c95488a0280806dcfff9
+    path: Assets/Scenes/Final Scenes/Main Scene.unity
+    guid: e10d782aca749bf459ddb1f7d610d5ba
   m_configObjects: {}

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEditor.Events;
 
 public class ConnectButtonToAudioManager : MonoBehaviour
 {
@@ -24,7 +23,8 @@ public class ConnectButtonToAudioManager : MonoBehaviour
         {
             var onPointerEnter = new EventTrigger.Entry();
             onPointerEnter.eventID = EventTriggerType.PointerEnter;
-            UnityEventTools.AddPersistentListener(onPointerEnter.callback, delegate { ConnectToManager(HoverSfxString); });
+            onPointerEnter.callback.AddListener(delegate { ConnectToManager(HoverSfxString); });
+            //UnityEventTools.AddPersistentListener(onPointerEnter.callback, delegate { ConnectToManager(HoverSfxString); });
 
             buttonHoverTrigger.triggers.Add(onPointerEnter);
         }

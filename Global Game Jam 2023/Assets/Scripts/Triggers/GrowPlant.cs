@@ -7,6 +7,8 @@ public class GrowPlant : MonoBehaviour
     public GameObject PresentBackgroundNoPlant;
     public GameObject PresentBackgroundWithPlant;
 
+    public SpriteRenderer Grandma;
+    public Sprite UvGrandmaSprite;
     private void Awake()
     {
         PresentBackgroundNoPlant.SetActive(true);
@@ -17,5 +19,6 @@ public class GrowPlant : MonoBehaviour
     {
         PresentBackgroundNoPlant.SetActive(false);
         PresentBackgroundWithPlant.SetActive(true);
+        Grandma.sprite = UvGrandmaSprite;
     }
 }

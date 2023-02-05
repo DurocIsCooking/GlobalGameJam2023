@@ -85,6 +85,7 @@ public class DialogueManager : MonoBehaviour
         // Else...
         if(_isTypingSentence)
         {
+            AudioManager.Instance.PlayVoice(_characterSpeaking.ToString());
             _currentTypingDelay = 0;
         }
         else
@@ -115,7 +116,11 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             _currentDialogueText.text += letter;
-            AudioManager.Instance.PlayVoice(_characterSpeaking.ToString());
+            
+            if(_currentTypingDelay != 0)
+            {
+                AudioManager.Instance.PlayVoice(_characterSpeaking.ToString());
+            }
             yield return new WaitForSeconds(_currentTypingDelay);
         }
         _isTypingSentence = false;
