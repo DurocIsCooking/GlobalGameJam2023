@@ -756,6 +756,7 @@ GameObject:
   - component: {fileID: 467996074}
   - component: {fileID: 467996073}
   - component: {fileID: 467996076}
+  - component: {fileID: 467996077}
   m_Layer: 0
   m_Name: Credits
   m_TagString: Untagged
@@ -919,6 +920,20 @@ MonoBehaviour:
             m_StringArgument: Menu Hover
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &467996077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467996071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a6e3fe86a6bc4d8ce07ce49e0c6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickSfxString: Menu Click
+  HoverSfxString: Menu Hover
 --- !u!1 &491007482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,6 +2152,7 @@ GameObject:
   - component: {fileID: 1390320319}
   - component: {fileID: 1390320318}
   - component: {fileID: 1390320321}
+  - component: {fileID: 1390320322}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -2300,6 +2316,20 @@ MonoBehaviour:
             m_StringArgument: Menu Hover
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1390320322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390320316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a6e3fe86a6bc4d8ce07ce49e0c6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickSfxString: Menu Click
+  HoverSfxString: Menu Hover
 --- !u!1 &1399574544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2343,7 @@ GameObject:
   - component: {fileID: 1399574547}
   - component: {fileID: 1399574546}
   - component: {fileID: 1399574549}
+  - component: {fileID: 1399574550}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -2476,6 +2507,20 @@ MonoBehaviour:
             m_StringArgument: Menu Hover
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1399574550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399574544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a6e3fe86a6bc4d8ce07ce49e0c6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickSfxString: Menu Click
+  HoverSfxString: Menu Hover
 --- !u!1 &1403495517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,6 +3029,7 @@ GameObject:
   - component: {fileID: 1634583409}
   - component: {fileID: 1634583408}
   - component: {fileID: 1634583411}
+  - component: {fileID: 1634583412}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -3146,6 +3192,20 @@ MonoBehaviour:
             m_StringArgument: Menu Hover
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1634583412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634583406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a6e3fe86a6bc4d8ce07ce49e0c6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickSfxString: Menu Click
+  HoverSfxString: Menu Hover
 --- !u!1 &1642412818
 GameObject:
   m_ObjectHideFlags: 0
@@ -3239,6 +3299,7 @@ GameObject:
   - component: {fileID: 1684111638}
   - component: {fileID: 1684111637}
   - component: {fileID: 1684111640}
+  - component: {fileID: 1684111641}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -3401,6 +3462,20 @@ MonoBehaviour:
             m_StringArgument: Menu Hover
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1684111641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684111635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a6e3fe86a6bc4d8ce07ce49e0c6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickSfxString: Menu Click
+  HoverSfxString: Menu Hover
 --- !u!1 &1720743435
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,6 +3641,7 @@ GameObject:
   - component: {fileID: 1833898627}
   - component: {fileID: 1833898626}
   - component: {fileID: 1833898629}
+  - component: {fileID: 1833898630}
   m_Layer: 0
   m_Name: Quit
   m_TagString: Untagged
@@ -3729,6 +3805,20 @@ MonoBehaviour:
             m_StringArgument: Menu Hover
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1833898630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833898624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66a6e3fe86a6bc4d8ce07ce49e0c6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickSfxString: Menu Click
+  HoverSfxString: Menu Hover
 --- !u!1 &1857846992
 GameObject:
   m_ObjectHideFlags: 0
