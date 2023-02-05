@@ -3659,85 +3659,6 @@ MonoBehaviour:
           m_StringArgument: Piano
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &745343325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 745343326}
-  - component: {fileID: 745343328}
-  - component: {fileID: 745343327}
-  m_Layer: 0
-  m_Name: SeedTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &745343326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745343325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2813722065976448759}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &745343327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745343325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventType: 0
-  TriggeringItemName: Seed
-  DestroyItemOnClick: 0
-  EventToTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 745343328}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &745343328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745343325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    CharacterSpeaking: 0
-    Sentences:
-    - I don't think I have time to grow that... I'm leaving tomorrow.
 --- !u!1 &755444309
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,54 +5770,6 @@ MonoBehaviour:
     CharacterSpeaking: 0
     Sentences:
     - Hmm, that didn't work...
---- !u!1 &1266601260
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1266601261}
-  - component: {fileID: 1266601262}
-  m_Layer: 0
-  m_Name: DefaultTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1266601261
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266601260}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2813722065976448759}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1266601262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266601260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    CharacterSpeaking: 0
-    Sentences:
-    - A pot for plants! Growing something now would be pointless... I'm leaving tomorrow.
 --- !u!1 &1271326657
 GameObject:
   m_ObjectHideFlags: 0
@@ -8408,23 +8281,6 @@ MonoBehaviour:
     CharacterSpeaking: 0
     Sentences:
     - Another music sheet for some reason!
---- !u!114 &1754832212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433626127261407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    CharacterSpeaking: 0
-    Sentences:
-    - Huh, this looks like it has the first two digits of a number written down...
-      but the second half has been eaten!
 --- !u!114 &1754832213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8468,25 +8324,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1754832215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433626127261407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventType: 0
-  TriggeringItemName: 
-  DestroyItemOnClick: 0
-  EventToTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1754832212}
+      - m_Target: {fileID: 1866630903}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: TriggerDialogue
         m_Mode: 1
@@ -9183,6 +9021,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855387180}
   m_CullTransparentMesh: 1
+--- !u!1 &1866630901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1866630902}
+  - component: {fileID: 1866630903}
+  m_Layer: 0
+  m_Name: Pickup Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1866630902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866630901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2813722065317297391}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866630903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866630901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - Huh, this looks like it has the first two digits of a number written down...
+      but the second half has been eaten!
 --- !u!1 &1883168692
 GameObject:
   m_ObjectHideFlags: 0
@@ -15801,7 +15688,8 @@ Transform:
   m_LocalPosition: {x: 14.5, y: 2.33, z: 0.21624586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1866630902}
   m_Father: {fileID: 54652832}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15816,9 +15704,7 @@ Transform:
   m_LocalPosition: {x: 16.37, y: -1.09, z: 0.21624586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 745343326}
-  - {fileID: 1266601261}
+  m_Children: []
   m_Father: {fileID: 54652832}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15867,7 +15753,7 @@ GameObject:
   - component: {fileID: 2813722065976448759}
   - component: {fileID: 4309433625728677113}
   - component: {fileID: 4309433625728677115}
-  - component: {fileID: 4309433625728677114}
+  - component: {fileID: 4309433625728677116}
   m_Layer: 0
   m_Name: Pot Present
   m_TagString: Untagged
@@ -15901,20 +15787,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4743366, y: 1.5138958}
   m_EdgeRadius: 0
---- !u!114 &4309433625728677114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309433625728677063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac86ec9abc5e0db4faa3ec875bae4d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SeedTrigger: {fileID: 0}
-  DefaultTrigger: {fileID: 0}
 --- !u!114 &4309433625728677115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15933,9 +15805,9 @@ MonoBehaviour:
   EventToTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4309433625728677114}
-        m_TargetAssemblyTypeName: PresentPot, Assembly-CSharp
-        m_MethodName: ChooseDialogue
+      - m_Target: {fileID: 4309433625728677116}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15945,6 +15817,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4309433625728677116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4309433625728677063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - A pot for plants! Growing something now would be pointless... I'm leaving tomorrow.
 --- !u!114 &4309433626127261406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15979,10 +15867,8 @@ GameObject:
   - component: {fileID: 4309433626127261410}
   - component: {fileID: 4309433626127261409}
   - component: {fileID: 8590443794255333539}
-  - component: {fileID: 1754832212}
   - component: {fileID: 1754832213}
   - component: {fileID: 1754832214}
-  - component: {fileID: 1754832215}
   m_Layer: 0
   m_Name: Ripped Page Present
   m_TagString: Untagged

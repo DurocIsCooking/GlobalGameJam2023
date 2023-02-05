@@ -146,6 +146,6 @@ public class DialogueManager : MonoBehaviour
 
     public void WrongItemDialogue()
     {
-        transform.GetChild(0).GetComponent<DialogueTrigger>().TriggerDialogue();
+        IncorrectItemDialogue.TriggerDialogue();
     }
 }
