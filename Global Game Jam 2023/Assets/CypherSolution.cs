@@ -9,6 +9,6 @@ public class CypherSolution : MonoBehaviour
     public void GrantKettleAccess()
     {
         Kettle.transform.GetChild(0).gameObject.SetActive(false);
-        Kettle.transform.GetChild(0).gameObject.SetActive(true);
+        Kettle.transform.GetChild(1).gameObject.SetActive(true);
     }
 }

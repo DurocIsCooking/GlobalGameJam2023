@@ -27,7 +27,7 @@ public class CypherPuzzle : MonoBehaviour
             PuzzleManager.Instance.PuzzleDown("Regular");
             InventoryManager.Instance.ItemInUse.Item.PuzzleName = ""; // So that puzzle no longer opens
             m_CypherSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
-            // trigger dialogue
+            m_CypherSolutionTriggers.GetComponent<CypherSolution>().GrantKettleAccess();
         }
         else
         {
