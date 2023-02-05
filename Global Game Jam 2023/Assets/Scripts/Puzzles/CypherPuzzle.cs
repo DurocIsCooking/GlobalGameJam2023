@@ -11,27 +11,11 @@ public class CypherPuzzle : MonoBehaviour
     [SerializeField] private Text m_Input;
     [SerializeField] private InputField m_InputField;
     [SerializeField] private string m_Solution;
+    [SerializeField] private GameObject m_CypherSolutionTriggers;
 
     private void Awake()
     {
         IncorrectMessage.SetActive(false);
-    }
-
-
-    private void Update()
-    {
-        /*
-        if(InputText.text != "Kettle" && InputText.text != "")
-        {
-            IncorrectMessage.SetActive(true);
-            Debug.Log("That's the wrong word!");
-        }
-        else
-        {
-            IncorrectMessage.SetActive(false);
-            Debug.Log("You did it!");
-        }
-        */
     }
 
     public void CheckInput()
@@ -41,6 +25,9 @@ public class CypherPuzzle : MonoBehaviour
             IncorrectMessage.SetActive(false);
             Debug.Log("You did it!");
             PuzzleManager.Instance.PuzzleDown("Regular");
+            InventoryManager.Instance.ItemInUse.Item.PuzzleName = ""; // So that puzzle no longer opens
+            m_CypherSolutionTriggers.GetComponent<DialogueTrigger>().TriggerDialogue();
+            // trigger dialogue
         }
         else
         {

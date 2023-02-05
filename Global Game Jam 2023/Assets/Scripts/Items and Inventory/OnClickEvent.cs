@@ -40,7 +40,6 @@ public class OnClickEvent : MonoBehaviour, IClickable
             case EventTypes.Dialogue:
                 if (GameManager.Instance.CurrentGameState == GameManager.GameStates.FreePlay)
                 {
-                    GameManager.Instance.SwitchGameState(GameManager.GameStates.Dialogue);
                     EventToTrigger.Invoke();
                 }
                 break;
