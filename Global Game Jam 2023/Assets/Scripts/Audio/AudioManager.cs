@@ -244,7 +244,7 @@ public class AudioManager : MonoBehaviour
         switch (Character)
         {
             case "Potello":
-                m_SFXAudioSource.PlayOneShot(m_Voice_Potello, 0.7f);
+                m_SFXAudioSource.PlayOneShot(m_Voice_Potello, 0.75f);
                 break;
 
             case "Kiino":
