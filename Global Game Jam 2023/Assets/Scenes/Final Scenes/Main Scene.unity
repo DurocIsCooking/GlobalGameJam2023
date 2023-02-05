@@ -1135,6 +1135,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &315515538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4309433625461685415, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
+  m_PrefabInstance: {fileID: 1052260596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &325448598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2371,8 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - It's a kettle, but its not hot. Grandma must have turned the flames down.
+    - It's a kettle... huh, but it's not hot at all. I guess Grandma's fire is going
+      out.
 --- !u!114 &587729883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4781,11 +4787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685401, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.68
+      value: 2.4765625
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685401, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.81
+      value: 2.5585938
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Name
@@ -4818,7 +4824,7 @@ PrefabInstance:
     - target: {fileID: 8590443794115619547, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 55b21a9dd07f725458a30fcb27cf7c97, type: 3}
+      objectReference: {fileID: 21300000, guid: 9bcaf4000cbcb25438d0b63d23ffb8e4, type: 3}
     - target: {fileID: 8590443794115619547, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -5083,12 +5089,29 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
   m_PrefabInstance: {fileID: 1052260596}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 315515538}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfce8611c329564459a6f60c9387ab3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1052260602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315515538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - Huh, wait a second... this book seems familiar. I think Gran has a similar
+      book in the present.
 --- !u!114 &1059766564 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
@@ -5576,7 +5599,8 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - This lamp is so frilly and cute!
+    - It's Gran's lamp... her decor is so unique. I probably shouldn't take this
+      with me.
 --- !u!114 &1118288113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7511,7 +7535,35 @@ MonoBehaviour:
   DestroyItemOnClick: 0
   EventToTrigger:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1534068188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840442459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - 
 --- !u!4 &1631188474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2813722066247638679, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
@@ -8147,7 +8199,8 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Shell-o World!
+    - Blue skies today. I really hope the weather cooperates tomorrow... it'll make
+      my move that much smoother.
 --- !u!114 &1722128024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8437,24 +8490,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4309433625461685415, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
   m_PrefabInstance: {fileID: 951329400}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1754832211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754832206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventType: 2
-  TriggeringItemName: 
-  DestroyItemOnClick: 0
-  EventToTrigger:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1754832212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10385,7 +10420,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - It's nice and warm...
+    - It's warm... but the flames are dwindling.
 --- !u!114 &2078333334
 MonoBehaviour:
   m_ObjectHideFlags: 0
