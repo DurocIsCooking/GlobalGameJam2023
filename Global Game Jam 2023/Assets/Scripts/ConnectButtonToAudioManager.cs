@@ -9,6 +9,7 @@ public class ConnectButtonToAudioManager : MonoBehaviour
 {
     public string ClickSfxString;
     public string HoverSfxString;
+    public bool Piano;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +25,17 @@ public class ConnectButtonToAudioManager : MonoBehaviour
             var onPointerEnter = new EventTrigger.Entry();
             onPointerEnter.eventID = EventTriggerType.PointerEnter;
             onPointerEnter.callback.AddListener(delegate { ConnectToManager(HoverSfxString); });
-            //UnityEventTools.AddPersistentListener(onPointerEnter.callback, delegate { ConnectToManager(HoverSfxString); });
-
             buttonHoverTrigger.triggers.Add(onPointerEnter);
         }
     }
 
     void ConnectToManager(string sfx)
     {
+        if(Piano)
+        {
+            AudioManager.Instance.PlayKey(int.Parse(sfx));
+            return;
+        }
         AudioManager.Instance.PlaySFX(sfx);
     }
 }
