@@ -6,32 +6,44 @@ using TMPro;
 
 public class CypherPuzzle : MonoBehaviour
 {
-    public GameObject IncorrectMessage;
-    public TextMeshProUGUI InputText;
-
-    public InputField m_InputText;
-    public string m_Text;
-    public string m_Answer;
+    [SerializeField] private GameObject IncorrectMessage;
+    //public TextMeshProUGUI InputText;
+    [SerializeField] private Text m_Input;
+    [SerializeField] private string m_Solution;
 
     private void Awake()
     {
         IncorrectMessage.SetActive(false);
-        m_Text = m_InputText.text;
     }
 
 
     private void Update()
     {
-        if(m_InputText.text != "Kettle" || m_InputText.text != "")
+        /*
+        if(InputText.text != "Kettle" && InputText.text != "")
         {
             IncorrectMessage.SetActive(true);
-
             Debug.Log("That's the wrong word!");
         }
         else
         {
             IncorrectMessage.SetActive(false);
             Debug.Log("You did it!");
+        }
+        */
+    }
+
+    public void CheckInput()
+    {
+        if(m_Input.text == m_Solution)
+        {
+            IncorrectMessage.SetActive(false);
+            Debug.Log("You did it!");
+        }
+        else
+        {
+            IncorrectMessage.SetActive(true);
+            Debug.Log("Hmm...");
         }
     }
 }
