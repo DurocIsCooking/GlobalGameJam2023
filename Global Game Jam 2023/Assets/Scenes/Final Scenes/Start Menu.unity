@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &220424028
 Transform:
   m_ObjectHideFlags: 0
@@ -2916,7 +2916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1583352768
 Transform:
   m_ObjectHideFlags: 0
@@ -4009,7 +4009,7 @@ MonoBehaviour:
     Designers\t\t\t\t\t\tGabrielle Poirier\r\n\t\t\t\t\t\t\t\t\t\t\t\tJamie Javadi\r\n\r\nTech
     Designers & \t\t\t\t\t\tAaron Scott\nGameplay Programmers\t\t\t\tTristan Durocher\r\n\r\nArt
     & Illustration\t\t\t\t\t\t\tAnmin Pradel-Tessier\r\n\r\nUI Designer\t\t\t\t\t\t\t\t\tGabrielle
-    Poirier\r\n\r\nComposer\t\t\t\t\t\t\t\t\tSteven Marco\r\n\r\nAudio Programmer\t\t\t\t\t\tAaron
+    Poirier\r\n\r\nComposer\t\t\t\t\t\t\t\t\tSteven Marco\rgliese\n\r\nAudio Programmer\t\t\t\t\t\tAaron
     Scott"
 --- !u!222 &1871873969
 CanvasRenderer:
