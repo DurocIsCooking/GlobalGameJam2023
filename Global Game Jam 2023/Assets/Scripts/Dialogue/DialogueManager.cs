@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueTrigger GameStartDialogue;
     public DialogueTrigger IncorrectItemDialogue;
 
-    //private GameManager.GameStates _previousGameState;
+    private GameManager.GameStates _previousGameState;
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        //_previousGameState = GameManager.Instance.CurrentGameState;
+        _previousGameState = GameManager.Instance.CurrentGameState;
         //Debug.Log("Previous game state: " + _previousGameState);
         GameManager.Instance.SwitchGameState(GameManager.GameStates.Dialogue);
 
@@ -132,8 +132,16 @@ public class DialogueManager : MonoBehaviour
     {
         //Debug.Log("Previous game state: " + _previousGameState);
         //GameManager.Instance.SwitchGameState(_previousGameState);
-        GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        
         _currentDialogueBox.SetActive(false);
+        if(_previousGameState == GameManager.GameStates.Puzzle)
+        {
+            GameManager.Instance.SwitchGameState(_previousGameState);
+        }
+        else
+        {
+            GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        }
     }
 
     public void WrongItemDialogue()

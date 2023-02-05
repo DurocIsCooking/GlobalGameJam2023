@@ -25,6 +25,10 @@ public class ItemGameObject : MonoBehaviour, IClickable
 
     public void OnClick()
     {
+        if(GameManager.Instance.CurrentGameState != GameManager.GameStates.FreePlay)
+        {
+            return;
+        }
         InventoryManager.Instance.AddItem(Item);
         OnDestroy();
     }

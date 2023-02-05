@@ -25,6 +25,7 @@ public class SafePuzzle : MonoBehaviour
 
     public ItemGameObject BookArchaic;
     public ItemGameObject MusicSheet1;
+    public DialogueTrigger IncorrectInput;
 
     public void Start()
     {
@@ -246,6 +247,7 @@ public class SafePuzzle : MonoBehaviour
         }
         else
         {
+            IncorrectInput.TriggerDialogue();
             Debug.Log("REPRIMAND: INCORRECT INPUT, MEATBAG.");
         }
     }

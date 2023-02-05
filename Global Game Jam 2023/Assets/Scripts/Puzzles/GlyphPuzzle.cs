@@ -38,6 +38,7 @@ public class GlyphPuzzle : MonoBehaviour
     [SerializeField] private GameObject m_ClockGameObject;
     [SerializeField] private GameObject m_GlyphSolutionTriggers;
     public ItemGameObject MusicSheet2;
+    public DialogueTrigger IncorrectInput;
 
     public void Start()
     {
@@ -142,6 +143,7 @@ public class GlyphPuzzle : MonoBehaviour
         }
         else
         {
+            IncorrectInput.TriggerDialogue();
             Debug.Log("REPRIMAND: INCORRECT INPUT, MEATBAG.");
         }
     }
