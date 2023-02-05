@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     private Dialogue.Characters _characterSpeaking;
 
+    public DialogueTrigger GameStartDialogue;
     public DialogueTrigger IncorrectItemDialogue;
 
     //private GameManager.GameStates _previousGameState;
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         _sentences = new Queue<string>();
-        gameObject.transform.GetChild(0).GetComponent<DialogueTrigger>().TriggerDialogue();
+        GameStartDialogue.TriggerDialogue();
     }
 
     public void StartDialogue(Dialogue dialogue)

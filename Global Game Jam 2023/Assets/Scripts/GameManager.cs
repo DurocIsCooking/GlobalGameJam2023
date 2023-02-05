@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
     public Camera PresentCamera;
     public Camera PastCamera;
     public Image FadeToBlack;
-    
+
+    public DialogueTrigger GameEndDialogue;
+    public DialogueTrigger TimeTravelDialogue;
+    private bool _firstTimeTravel = true;
 
     public enum GameStates
     { 
@@ -59,6 +62,11 @@ public class GameManager : MonoBehaviour
         PresentCamera.enabled = !PresentCamera.enabled;
         PastCamera.enabled = !PastCamera.enabled;
         SwitchGameState(GameStates.FreePlay);
+        if (_firstTimeTravel)
+        {
+            _firstTimeTravel = false;
+            TimeTravelDialogue.TriggerDialogue();
+        }
     }
 
     public IEnumerator GameEnd()
@@ -66,7 +74,7 @@ public class GameManager : MonoBehaviour
         SwitchGameState(GameStates.Cutscene);
         yield return new WaitForSeconds(5);
         // Trigger grandma's dialogue;
-        gameObject.transform.GetChild(0).GetComponent<DialogueTrigger>().TriggerDialogue();
+        GameEndDialogue.TriggerDialogue();
         yield return new WaitUntil(FinalDialogueComplete);
         SwitchGameState(GameStates.Cutscene);
         yield return new WaitForSeconds(2);

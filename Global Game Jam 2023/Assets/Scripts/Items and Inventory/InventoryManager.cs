@@ -157,7 +157,11 @@ public class InventoryManager : MonoBehaviour
     public void UsePopUpItem()
     {
         ItemInUse.Item.PopUpEvent.Invoke();
-        ItemInUse.StopUsingItem();
+        if(ItemInUse != null)
+        {
+            ItemInUse.StopUsingItem();
+        }
+        
     }
 
     // Draws cubes that show where items will display in UI
