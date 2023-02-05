@@ -289,4 +289,4 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     PuzzleName: 
-  _scaleSpeed: 0.05
+  _scaleSpeed: 0.005

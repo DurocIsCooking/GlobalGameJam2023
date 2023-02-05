@@ -108,7 +108,7 @@ public class ItemSlot : MonoBehaviour, IClickable
             {
                 GetComponent<RectTransform>().localScale = new Vector3(InventoryManager.Instance.SpriteScale, InventoryManager.Instance.SpriteScale, 1);
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForEndOfFrame();
         }
         
     }
