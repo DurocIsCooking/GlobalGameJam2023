@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         _sentences = new Queue<string>();
+        gameObject.transform.GetChild(0).GetComponent<DialogueTrigger>().TriggerDialogue();
     }
 
     public void StartDialogue(Dialogue dialogue)
