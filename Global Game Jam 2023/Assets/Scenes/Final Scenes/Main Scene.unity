@@ -1857,7 +1857,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - The piano.Yikes, it's seriously out of tune.
+    - The piano. Yikes, it's seriously out of tune.
 --- !u!114 &400998610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2485,7 +2485,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - It's a kettle... huh, but it's not hot at all. I guess Grandma's fire is going
+    - It's a kettle... Huh, but it's not hot at all. I guess Grandma's fire is going
       out.
 --- !u!114 &587729883
 MonoBehaviour:
@@ -5689,7 +5689,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - It's Gran's lamp... her decor is so unique. I probably shouldn't take this
+    - It's Gran's lamp... Her decor is so unique. I probably shouldn't take this
       with me.
 --- !u!114 &1118288113
 MonoBehaviour:
@@ -7713,7 +7713,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Oh no! I'm late for... wait, I dont have any friends, nevermind.
+    - Oh no! I'm late for... Wait, I dont have any friends, nevermind.
 --- !u!114 &1683711704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7871,7 +7871,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - The sepia filter makes it look overcast outside... ha, just kidding! There
+    - The sepia filter makes it look overcast outside... Ha, just kidding! There
       is no sepia filter in real life.
 --- !u!114 &1707945373
 MonoBehaviour:
@@ -8199,7 +8199,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Blue skies today. I really hope the weather cooperates tomorrow... it'll make
+    - Blue skies today. I really hope the weather cooperates tomorrow... It'll make
       my move that much smoother.
 --- !u!114 &1722128024
 MonoBehaviour:
