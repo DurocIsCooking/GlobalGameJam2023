@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_SFXPaper: {fileID: 8300000, guid: 7c3f3fcf9e0d1184d98988b64c88b870, type: 3}
   m_SFXBook: {fileID: 8300000, guid: 7c3f3fcf9e0d1184d98988b64c88b870, type: 3}
   m_SFXKettle: {fileID: 8300000, guid: c839658e8dd5b004698de6b292f3da52, type: 3}
-  m_SFXTimeTravel: {fileID: 0}
+  m_SFXTimeTravel: {fileID: 8300000, guid: 93d34c4c11ffd0d4c874c83c001f8052, type: 3}
   m_SFXClick: {fileID: 8300000, guid: 0951ecfd703fcfa4aa2f069cf0d2c3d2, type: 3}
   m_SFXTick: {fileID: 8300000, guid: 363566413eed6bd4d9ae54172528d049, type: 3}
   m_SFXTock: {fileID: 8300000, guid: 52b9a0ee99f35e448aa537f4724de228, type: 3}
