@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
-    [Header("Exit")]
-    [SerializeField] private GameObject m_Exit;
+    //[Header("Exit")]
+    //[SerializeField] private GameObject m_Exit;
 
     [Header("Puzzles")]
     [SerializeField] private GameObject m_SafePuzzle;
@@ -61,7 +61,7 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        m_Exit.SetActive(false);
+        //m_Exit.SetActive(false);
 
         m_CurrentPuzzle = null;
 
@@ -71,7 +71,7 @@ public class PuzzleManager : MonoBehaviour
         RectTransform canvasRect = canvas.GetComponent<RectTransform>();
         m_OnScreen.position = new Vector3(canvasRect.rect.width/2, canvasRect.rect.height/2, 0) * canvasRect.localScale.x;
         m_OffScreen.position = m_OnScreen.position + new Vector3(0, -1400, 0);
-        m_Exit.GetComponent<RectTransform>().position = m_OnScreen.position + new Vector3(canvasRect.rect.width / 8, canvasRect.rect.height / 8, 0) * canvasRect.localScale.x;
+        //m_Exit.GetComponent<RectTransform>().position = m_OnScreen.position + new Vector3(canvasRect.rect.width / 8, canvasRect.rect.height / 8, 0) * canvasRect.localScale.x;
 
         m_SafePuzzle.transform.position = m_OffScreen.position;
         m_CypherPuzzle.transform.position = m_OffScreen.position;
@@ -117,7 +117,7 @@ public class PuzzleManager : MonoBehaviour
 
             if ((m_CurrentPuzzle.transform.position - m_OnScreen.position).magnitude <= 1)
             {
-                m_Exit.SetActive(true);
+                //m_Exit.SetActive(true);
                 m_MovePuzzleUp = false;
 
                 m_DebugSafePuzzle = false;
@@ -184,6 +184,6 @@ public class PuzzleManager : MonoBehaviour
             m_MovePuzzleDown = true;
         }
 
-        m_Exit.SetActive(false);
+        //m_Exit.SetActive(false);
     }
 }

@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_BGMIntro: {fileID: 8300000, guid: e18611715e847e64293af8934a37da3b, type: 3}
   m_BGMLoop: {fileID: 8300000, guid: b1c486962a8a71c4a98ba02893e51846, type: 3}
   m_BGMFinal: {fileID: 8300000, guid: 4539b7356289ee24d8a4ac98d7293b70, type: 3}
-  m_FadeSpeed: 0.4
+  m_FadeSpeed: 0.6
   m_FadeIn: 0
   m_FadeOut: 0
   m_SFXPickUp: {fileID: 8300000, guid: deb84e18955794448974f59157eea301, type: 3}

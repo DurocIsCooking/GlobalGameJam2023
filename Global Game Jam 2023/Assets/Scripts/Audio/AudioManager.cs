@@ -123,7 +123,7 @@ public class AudioManager : MonoBehaviour
             m_BGMAudioSourceIntro.volume -= m_FadeSpeed * Time.deltaTime;
             m_BGMAudioSourceLoop.volume -= m_FadeSpeed * Time.deltaTime;
 
-            if(m_BGMAudioSourceIntro.volume == 0 && m_BGMAudioSourceLoop.volume == 0)
+            if(m_BGMAudioSourceIntro.volume <= 0 && m_BGMAudioSourceLoop.volume <= 0)
             {
                 m_FadeOut = false;
             }
@@ -134,7 +134,7 @@ public class AudioManager : MonoBehaviour
             m_BGMAudioSourceIntro.volume += m_FadeSpeed * Time.deltaTime;
             m_BGMAudioSourceLoop.volume += m_FadeSpeed * Time.deltaTime;
 
-            if(m_BGMAudioSourceIntro.volume == m_BGMOriginalVolume && m_BGMAudioSourceLoop.volume == m_BGMOriginalVolume)
+            if(m_BGMAudioSourceIntro.volume >= m_BGMOriginalVolume && m_BGMAudioSourceLoop.volume >= m_BGMOriginalVolume)
             {
                 m_FadeIn = false; 
             }
@@ -163,11 +163,13 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM()
     {
+        m_FadeOut = false;
         m_FadeIn = true;
     }
 
     public void StopBGM()
     {
+        m_FadeIn = false;
         m_FadeOut = true;
     }
 
