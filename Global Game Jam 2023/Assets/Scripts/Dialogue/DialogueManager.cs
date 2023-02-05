@@ -51,6 +51,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         _previousGameState = GameManager.Instance.CurrentGameState;
+        Debug.Log("Previous game state: " + _previousGameState);
         GameManager.Instance.SwitchGameState(GameManager.GameStates.Dialogue);
 
         if(dialogue.CharacterSpeaking == Dialogue.Characters.Kiino)
@@ -114,7 +115,6 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             _currentDialogueText.text += letter;
-            Debug.Log(_characterSpeaking.ToString());
             AudioManager.Instance.PlayVoice(_characterSpeaking.ToString());
             yield return new WaitForSeconds(_currentTypingDelay);
         }

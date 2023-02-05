@@ -115,8 +115,6 @@ public class PuzzleManager : MonoBehaviour
         {
             m_CurrentPuzzle.transform.position = Vector3.MoveTowards(m_CurrentPuzzle.transform.position, m_OnScreen.position, m_Speed * m_SpeedMultiplier * Time.deltaTime);
 
-            Vector3 roundedPosition = new Vector3(Mathf.Round(m_CurrentPuzzle.transform.position.x), Mathf.Round(m_CurrentPuzzle.transform.position.y), 0);
-
             if ((m_CurrentPuzzle.transform.position - m_OnScreen.position).magnitude <= 1)
             {
                 m_Exit.SetActive(true);
@@ -131,10 +129,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (m_MovePuzzleDown)
         {
-            Debug.Log("send puzzle down");
             m_CurrentPuzzle.transform.position = Vector3.MoveTowards(m_CurrentPuzzle.transform.position, m_OffScreen.position, m_Speed * m_SpeedMultiplier * Time.deltaTime);
-
-            Vector3 roundedPosition = new Vector3(Mathf.Round(m_CurrentPuzzle.transform.position.x), Mathf.Round(m_CurrentPuzzle.transform.position.y), 0);
 
             if ((m_CurrentPuzzle.transform.position - m_OffScreen.position).magnitude <= 1)
             {
@@ -167,13 +162,18 @@ public class PuzzleManager : MonoBehaviour
                 AudioManager.Instance.StopBGM();
                 break;
         }
-
+        m_MovePuzzleDown = false;
         m_MovePuzzleUp = true;
     }
 
     public void PuzzleDown(string Type)
     {
-        GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        m_MovePuzzleUp = false;
+
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Puzzle)
+        {
+            GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        }
         if (Type == "Regular")
         {
             m_MovePuzzleDown = true;
