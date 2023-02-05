@@ -7,6 +7,7 @@ public class ItemSlot : MonoBehaviour, IClickable
 {
     public Item Item;
     private GameObject _xButton;
+    [SerializeField] private float _scaleSpeed;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class ItemSlot : MonoBehaviour, IClickable
         }    
 
         // If the player switches items, they stop using their current item
-        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp) // This could get buggy with minigames
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.PopUp)
         {
             InventoryManager.Instance.ItemInUse.StopUsingItem();
         }
@@ -93,6 +94,23 @@ public class ItemSlot : MonoBehaviour, IClickable
         tempColor.a = 1;
         image.color = tempColor;
         image.sprite = Item.Sprite;
+        StartCoroutine("ScaleItem");
+    }
+
+    private IEnumerator ScaleItem()
+    {
+        GetComponent<RectTransform>().localScale = Vector3.zero;
+
+        while(transform.localScale.x < InventoryManager.Instance.SpriteScale)
+        {
+            GetComponent<RectTransform>().localScale += Vector3.one * _scaleSpeed;
+            if(GetComponent<RectTransform>().localScale.x > InventoryManager.Instance.SpriteScale)
+            {
+                GetComponent<RectTransform>().localScale = new Vector3(InventoryManager.Instance.SpriteScale, InventoryManager.Instance.SpriteScale, 1);
+            }
+            yield return new WaitForSeconds(0.05f);
+        }
+        
     }
 
     public void RemoveItem()
