@@ -3010,6 +3010,7 @@ Transform:
   - {fileID: 521464293}
   - {fileID: 1707945371}
   - {fileID: 400998608}
+  - {fileID: 1285781570}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4564,13 +4565,14 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 1
     Sentences:
-    - Oh... this is... just like back then...
+    - Oh... This is... just like back then...
     - "\u266B Hmm hm hmmmmm hmm hmmmmm \u266B"
-    - Thank you, Kiino. I remember it so clearly... for a moment there, it felt as
-      though I had been whisked away to the past. Imagine that, ohoho!
+    - 'Thank you, Kiino. I remember it so clearly... '
+    - For a moment there, it felt as though I had been whisked away to the past.
+      Imagine that, ohoho!
     - ... ... ...
-    - Listen here, Kiino... there is no need to worry. Change is scary, but it is
-      necessary to more forward in life.
+    - Kiino... There is no need to worry. Change is scary, but it is necessary to
+      more forward in life.
     - Your Gran is so proud of you for taking that first step.
     - There is no doubt in my mind that you will find where you belong in this big
       wide forest.
@@ -5385,7 +5387,7 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - A pot for plants and seeds, to grow delicious vegetables and beautiful flowers!
+    - Hmmm... I wonder what effect this could have in the present?
 --- !u!1 &1105921744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5958,6 +5960,117 @@ MonoBehaviour:
   _typingDelay: 0.05
   GameStartDialogue: {fileID: 1209075861}
   IncorrectItemDialogue: {fileID: 934810377}
+--- !u!1 &1285781569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285781570}
+  - component: {fileID: 1285781573}
+  - component: {fileID: 1285781572}
+  - component: {fileID: 1285781571}
+  m_Layer: 0
+  m_Name: Image Past
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1285781570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285781569}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.89, y: 3.0961063, z: 0.02022171}
+  m_LocalScale: {x: 0.30912, y: 0.95675, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678018610}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285781571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285781569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06691e91c64f5149b0d6e6cf562be5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    CharacterSpeaking: 0
+    Sentences:
+    - ... ... ...
+    - ... It's me, Gran, and Grandfather. Gran looks so happy.
+    - Man, I don't even remember taking this photo. I must have been a young little
+      fungi.
+    - ... I guess Gran took it down. It probably makes her sad. I should leave it
+      here, where it belongs. In the past.
+--- !u!114 &1285781572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285781569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1285781571}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &1285781573
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285781569}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08264494, y: 0.013774276}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4628096, y: 2.1294763}
+  m_EdgeRadius: 0
 --- !u!1 &1289827245
 GameObject:
   m_ObjectHideFlags: 0
@@ -8280,7 +8393,8 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Another music sheet for some reason!
+    - Got it! Oh, what was that noise? The clock's trunk opened up... and there was
+      a music sheet inside.
 --- !u!114 &1754832213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9868,8 +9982,9 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Got it! Hmm... there's an old book in here... and a music sheet! Heck yeah
-      I'm so cool
+    - Got it! Hmm... There's an old book in here... and a music sheet.
+    - But it's only the first couple of notes... I'll have to find the rest of them
+      to play Gran that song.
 --- !u!1 &1952761283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10561,8 +10676,8 @@ MonoBehaviour:
   dialogue:
     CharacterSpeaking: 0
     Sentences:
-    - Okay, opened up the clock - hey, there's a music sheet stuck here! Wonder what
-      else I can find in here...
+    - Okay, opened up the clock - Hey, there's a music sheet stuck between the gears.
+      Wonder what else I can find in here...
 --- !u!1 &2118301610
 GameObject:
   m_ObjectHideFlags: 0
