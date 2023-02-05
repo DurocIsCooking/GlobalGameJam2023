@@ -11,5 +11,7 @@ public class SearchKettle : MonoBehaviour
         InventoryManager.Instance.AddItem(seed);
         InventoryManager.Instance.AddItem(musicScore);
         gameObject.SetActive(false);
+        PianoPuzzle.Instance.ScoreFound(4);
+        AudioManager.Instance.PlaySFX("Pickup");
     }
 }
