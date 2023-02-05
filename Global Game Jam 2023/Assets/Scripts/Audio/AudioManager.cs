@@ -64,12 +64,10 @@ public class AudioManager : MonoBehaviour
     private float m_SFXOriginalVolume;
 
     //---VOICE CLIPS---//
-    /*
+    
     [Header("Voice")]
-    [SerializeField] private AudioClip m_Voice1; //To be renamed once we know what Voice clips we'll need.
-    [SerializeField] private AudioClip m_Voice2;
-    [SerializeField] private AudioClip m_Voice3;
-    */
+    [SerializeField] private AudioClip m_Voice_Potello; //To be renamed once we know what Voice clips we'll need.
+    [SerializeField] private AudioClip m_Voice_Kiino;
 
     //---SINGLETON---//
 
@@ -237,6 +235,21 @@ public class AudioManager : MonoBehaviour
         }
 
         m_PreviousSFX = SFX;
+    }
+
+    public void PlayVoice(string Character)
+    {
+        switch (Character)
+        {
+            case "Potello":
+                m_SFXAudioSource.clip = m_Voice_Potello;
+                m_SFXAudioSource.Play();
+                break;
+            case "Kiino":
+                m_SFXAudioSource.clip = m_Voice_Kiino;
+                m_SFXAudioSource.Play();
+                break;
+        }
     }
 
     //---PIANO FUNCTIONALITY---//
