@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+// Used this tutorial for dialogue system: https://www.youtube.com/watch?v=_nRzoTzeyxU&ab_channel=Brackeys
+
 public class DialogueManager : MonoBehaviour
 {
-    // TO DO:
-        // Add text box open/close animation
-        // Add SFX
 
     // Singleton pattern
     public static DialogueManager Instance { get; private set; }
