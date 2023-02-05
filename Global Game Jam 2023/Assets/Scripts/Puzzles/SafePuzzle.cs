@@ -237,6 +237,7 @@ public class SafePuzzle : MonoBehaviour
             // Add items
             InventoryManager.Instance.AddItem(BookArchaic.Item);
             InventoryManager.Instance.AddItem(MusicSheet1.Item);
+            PianoPuzzle.Instance.ScoreFound(1);
             // Switch safe triggers
             m_SafeGameObject.transform.GetChild(0).gameObject.SetActive(false);
             m_SafeGameObject.transform.GetChild(1).gameObject.SetActive(true);

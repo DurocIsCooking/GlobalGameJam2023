@@ -139,6 +139,7 @@ public class ClockPuzzle : MonoBehaviour
         {
             // Add items
             InventoryManager.Instance.AddItem(MusicSheet3.Item);
+            PianoPuzzle.Instance.ScoreFound(3);
             // Switch safe triggers
             m_ClockGameObject.transform.GetChild(1).gameObject.SetActive(false);
             m_ClockGameObject.transform.GetChild(2).gameObject.SetActive(true);
