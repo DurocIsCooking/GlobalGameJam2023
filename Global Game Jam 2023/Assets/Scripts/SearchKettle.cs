@@ -10,5 +10,6 @@ public class SearchKettle : MonoBehaviour
         Item musicScore = transform.GetChild(1).GetComponent<ItemGameObject>().Item;
         InventoryManager.Instance.AddItem(seed);
         InventoryManager.Instance.AddItem(musicScore);
+        gameObject.SetActive(false);
     }
 }
