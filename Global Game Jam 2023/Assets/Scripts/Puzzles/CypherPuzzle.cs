@@ -36,7 +36,7 @@ public class CypherPuzzle : MonoBehaviour
 
     public void CheckInput()
     {
-        if(m_Input.text == m_Solution)
+        if(m_Input.text.ToLower() == m_Solution.ToLower())
         {
             IncorrectMessage.SetActive(false);
             Debug.Log("You did it!");

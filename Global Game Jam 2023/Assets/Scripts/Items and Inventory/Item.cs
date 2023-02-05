@@ -11,5 +11,5 @@ public class Item
     public Sprite PopUpSprite;
     public bool PopUpFromInventory;
     public UnityEvent PopUpEvent;
-
+    public string PuzzleName;
 }

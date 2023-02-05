@@ -50,6 +50,13 @@ public class ItemSlot : MonoBehaviour, IClickable
         // Switch game state
         GameManager.Instance.SwitchGameState(GameManager.GameStates.UsingItem);
 
+
+        if(Item.PuzzleName != "")
+        {
+            Debug.Log("it has a puzzle");
+            PuzzleManager.Instance.PuzzleUp(Item.PuzzleName);
+        }
+
         // Handle pop-up if applicable
         if (Item.PopUpFromInventory)
         {

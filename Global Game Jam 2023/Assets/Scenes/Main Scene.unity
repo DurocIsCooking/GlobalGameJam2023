@@ -3632,7 +3632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105921745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8991,7 +8991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Exit: {fileID: 1758112244224401009}
   m_SafePuzzle: {fileID: 1758112243871915847}
-  m_CypherPuzzle: {fileID: 0}
+  m_CypherPuzzle: {fileID: 760395510}
   m_GlyphPuzzle: {fileID: 1758112243874816256}
   m_ClockPuzzle: {fileID: 1758112243905938982}
   m_PianoPuzzle: {fileID: 1758112243671241119}
@@ -13084,8 +13084,8 @@ MonoBehaviour:
   m_AKey: {fileID: 8300000, guid: cd8a1d1c121ad7d44b054043c8fdf03a, type: 3}
   m_ASharpBFlatKey: {fileID: 8300000, guid: 6a4569d184ad9ec4799857d1b2aecbb4, type: 3}
   m_BKey: {fileID: 8300000, guid: f90d57033fc274e448b6af84cc1f685d, type: 3}
-  m_Voice_Potello: {fileID: 0}
-  m_Voice_Kiino: {fileID: 0}
+  m_Voice_Potello: {fileID: 8300000, guid: 577c5b23b4c6c15498e2cb502e3a1d23, type: 3}
+  m_Voice_Kiino: {fileID: 8300000, guid: a783681274711d3428fd03f8ca750be7, type: 3}
 --- !u!1 &4440057345741937999
 GameObject:
   m_ObjectHideFlags: 0
