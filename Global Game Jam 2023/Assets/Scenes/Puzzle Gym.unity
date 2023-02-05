@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &14137991
 Transform:
   m_ObjectHideFlags: 0
@@ -3765,19 +3765,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1464082951}
-        m_TargetAssemblyTypeName: CypherPuzzle, Assembly-CSharp
-        m_MethodName: CheckInput
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -4923,10 +4911,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Exit: {fileID: 382113323}
   m_SafePuzzle: {fileID: 1036261149}
+  m_CypherPuzzle: {fileID: 14137990}
   m_GlyphPuzzle: {fileID: 1038641498}
   m_ClockPuzzle: {fileID: 1002655356}
   m_PianoPuzzle: {fileID: 701372869}
   m_DebugSafePuzzle: 0
+  m_DebugCypherPuzzle: 0
   m_DebugGlyphPuzzle: 0
   m_DebugClockPuzzle: 0
   m_DebugPianoPuzzle: 0

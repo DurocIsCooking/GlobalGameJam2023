@@ -10,12 +10,14 @@ public class PuzzleManager : MonoBehaviour
 
     [Header("Puzzles")]
     [SerializeField] private GameObject m_SafePuzzle;
+    [SerializeField] private GameObject m_CypherPuzzle;
     [SerializeField] private GameObject m_GlyphPuzzle;
     [SerializeField] private GameObject m_ClockPuzzle;
     [SerializeField] private GameObject m_PianoPuzzle;
     private GameObject m_CurrentPuzzle;
 
     [SerializeField] private bool m_DebugSafePuzzle;
+    [SerializeField] private bool m_DebugCypherPuzzle;
     [SerializeField] private bool m_DebugGlyphPuzzle;
     [SerializeField] private bool m_DebugClockPuzzle;
     [SerializeField] private bool m_DebugPianoPuzzle;
@@ -72,6 +74,7 @@ public class PuzzleManager : MonoBehaviour
         m_Exit.GetComponent<RectTransform>().position = m_OnScreen.position + new Vector3(canvasRect.rect.width / 8, canvasRect.rect.height / 8, 0) * canvasRect.localScale.x;
 
         m_SafePuzzle.transform.position = m_OffScreen.position;
+        m_CypherPuzzle.transform.position = m_OffScreen.position;
         m_GlyphPuzzle.transform.position = m_OffScreen.position;
         m_ClockPuzzle.transform.position = m_OffScreen.position;
         m_PianoPuzzle.transform.position = m_OffScreen.position;
@@ -82,6 +85,10 @@ public class PuzzleManager : MonoBehaviour
         if(m_DebugSafePuzzle)
         {
             PuzzleUp("Safe");
+        }
+        else if (m_DebugCypherPuzzle)
+        {
+            PuzzleUp("Cypher");
         }
         else if(m_DebugGlyphPuzzle)
         {
@@ -146,6 +153,9 @@ public class PuzzleManager : MonoBehaviour
             case "Safe":
                 m_CurrentPuzzle = m_SafePuzzle;
                 break;
+            case "Cypher":
+                m_CurrentPuzzle = m_GlyphPuzzle;
+                break;
             case "Glyph":
                 m_CurrentPuzzle = m_GlyphPuzzle;
                 break;
@@ -158,7 +168,6 @@ public class PuzzleManager : MonoBehaviour
                 break;
         }
 
-        
         m_MovePuzzleUp = true;
     }
 

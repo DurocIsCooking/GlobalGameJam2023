@@ -39,6 +39,7 @@ public class CypherPuzzle : MonoBehaviour
         {
             IncorrectMessage.SetActive(false);
             Debug.Log("You did it!");
+            PuzzleManager.Instance.PuzzleDown("Regular");
         }
         else
         {
