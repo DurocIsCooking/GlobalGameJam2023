@@ -75,9 +75,9 @@ public class GameManager : MonoBehaviour
         while (FadeToBlack.color.a < 1)
         {
             Color tempColor = FadeToBlack.color;
-            tempColor.a += 0.05f;
+            tempColor.a += 0.025f;
             FadeToBlack.color = tempColor;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
         Debug.Log("Roll credits");
         yield break;

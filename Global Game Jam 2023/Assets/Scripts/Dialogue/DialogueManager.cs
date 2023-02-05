@@ -37,6 +37,8 @@ public class DialogueManager : MonoBehaviour
     private float _currentTypingDelay; // Need to set the typing delay to 0 when the player decides to skip dialogue
     private bool _isTypingSentence = false;
 
+    private Dialogue.Characters _characterSpeaking;
+
     public DialogueTrigger IncorrectItemDialogue;
 
     private void Start()
@@ -52,11 +54,13 @@ public class DialogueManager : MonoBehaviour
         {
             _currentDialogueBox = DialogueBoxKiino;
             _currentDialogueText = DialogueTextKiino;
+            _characterSpeaking = Dialogue.Characters.Kiino;
         }
         else
         {
             _currentDialogueBox = DialogueBoxPotello;
             _currentDialogueText = DialogueTextPotello;
+            _characterSpeaking = Dialogue.Characters.Potello;
         }
 
         _currentDialogueBox.SetActive(true);
@@ -107,6 +111,8 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             _currentDialogueText.text += letter;
+            Debug.Log(_characterSpeaking.ToString());
+            AudioManager.Instance.PlayVoice(_characterSpeaking.ToString());
             yield return new WaitForSeconds(_currentTypingDelay);
         }
         _isTypingSentence = false;
