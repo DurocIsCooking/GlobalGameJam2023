@@ -3632,7 +3632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105921745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8991,7 +8991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Exit: {fileID: 1758112244224401009}
   m_SafePuzzle: {fileID: 1758112243871915847}
-  m_CypherPuzzle: {fileID: 0}
+  m_CypherPuzzle: {fileID: 760395510}
   m_GlyphPuzzle: {fileID: 1758112243874816256}
   m_ClockPuzzle: {fileID: 1758112243905938982}
   m_PianoPuzzle: {fileID: 1758112243671241119}

@@ -41,6 +41,8 @@ public class DialogueManager : MonoBehaviour
 
     public DialogueTrigger IncorrectItemDialogue;
 
+    private GameManager.GameStates _previousGameState;
+
     private void Start()
     {
         _sentences = new Queue<string>();
@@ -48,6 +50,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        _previousGameState = GameManager.Instance.CurrentGameState;
         GameManager.Instance.SwitchGameState(GameManager.GameStates.Dialogue);
 
         if(dialogue.CharacterSpeaking == Dialogue.Characters.Kiino)
@@ -120,7 +123,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        GameManager.Instance.SwitchGameState(GameManager.GameStates.FreePlay);
+        Debug.Log("Previous game state: " + _previousGameState);
+        GameManager.Instance.SwitchGameState(_previousGameState);
         _currentDialogueBox.SetActive(false);
     }
 
