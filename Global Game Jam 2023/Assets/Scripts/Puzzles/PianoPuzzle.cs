@@ -48,6 +48,18 @@ public class PianoPuzzle : MonoBehaviour
     private int m_Solution9Original;
     private int m_Solution10Original;
 
+    [Header("Piano Score")]
+    [SerializeField] private GameObject m_Score1;
+    [SerializeField] private GameObject m_Score2;
+    [SerializeField] private GameObject m_Score3;
+    [SerializeField] private GameObject m_Score4;
+
+    [SerializeField] private bool m_DebugScore1;
+    [SerializeField] private bool m_DebugScore2;
+    [SerializeField] private bool m_DebugScore3;
+    [SerializeField] private bool m_DebugScore4;
+
+
     //---SINGLETON---//
 
     private static PianoPuzzle instance;
@@ -87,6 +99,36 @@ public class PianoPuzzle : MonoBehaviour
         m_Solution8Original = m_Solution8;
         m_Solution9Original = m_Solution9;
         m_Solution10Original = m_Solution10;
+
+        m_Score1.SetActive(false);
+        m_Score2.SetActive(false);
+        m_Score3.SetActive(false);
+        m_Score4.SetActive(false);
+    }
+
+    private void Update()
+    {
+        //DEBUG
+
+        if (m_DebugScore1)
+        {
+            ScoreFound(1);
+        }
+
+        if (m_DebugScore2)
+        {
+            ScoreFound(2);
+        }
+
+        if (m_DebugScore3)
+        {
+            ScoreFound(3);
+        }
+
+        if (m_DebugScore4)
+        {
+            ScoreFound(4);
+        }
     }
 
     public void CheckSolution(int Key)
@@ -189,5 +231,24 @@ public class PianoPuzzle : MonoBehaviour
 
         m_Solution10Check = false;
         m_Solution10 = m_Solution10Original;
+    }
+
+    public void ScoreFound(int Score)
+    {
+        switch (Score)
+        {
+            case 1:
+                m_Score1.SetActive(true);
+                break;
+            case 2:
+                m_Score2.SetActive(true);
+                break;
+            case 3:
+                m_Score3.SetActive(true);
+                break;
+            case 4:
+                m_Score4.SetActive(true);
+                break;
+        }
     }
 }
