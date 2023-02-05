@@ -55,7 +55,7 @@ public class PauseOptionsHandler : MonoBehaviour
         }
     }
 
-    private void Pause(string State)
+    public void Pause(string State)
     {
         if(State == "Start")
         {
@@ -69,5 +69,10 @@ public class PauseOptionsHandler : MonoBehaviour
             m_PauseScreen.SetActive(true);
             Debug.Log("Pause");
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
