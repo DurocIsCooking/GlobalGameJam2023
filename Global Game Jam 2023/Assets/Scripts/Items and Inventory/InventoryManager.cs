@@ -98,14 +98,16 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Item item)
     {
+        //Debug.Log("Adding item");
+        //Debug.Log(item.Name);
+        //if(item.Name.Contains("Music Sheet"))
+        //{
+        //    Debug.Log("Found music");
+        //    char lastCharacter = item.Name[item.Name.Length - 1];
+        //    PianoManager.ScoreFound(lastCharacter);
+        //}
 
-        if(item.Name.Contains("Music Sheet"))
-        {
-            char lastCharacter = item.Name[item.Name.Length - 1];
-            PianoManager.ScoreFound(lastCharacter);
-        }
-
-        Debug.Log("Adding item");
+        
         foreach (ItemSlot itemSlot in _itemSlots)
         {
             if (itemSlot.Item != null)
