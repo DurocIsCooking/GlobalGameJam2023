@@ -182,7 +182,7 @@ public class AudioManager : MonoBehaviour
         switch (SFX)
         {
             case "Pickup":
-                m_SFXAudioSource.PlayOneShot(m_SFXPickUp);
+                m_SFXAudioSource.PlayOneShot(m_SFXPickUp, 0.4f);
                 break;
             case "Key":
                 m_SFXAudioSource.PlayOneShot(m_SFXKey);
@@ -244,11 +244,11 @@ public class AudioManager : MonoBehaviour
         switch (Character)
         {
             case "Potello":
-                m_SFXAudioSource.PlayOneShot(m_Voice_Potello, 0.6f);
+                m_SFXAudioSource.PlayOneShot(m_Voice_Potello, 0.7f);
                 break;
 
             case "Kiino":
-                m_SFXAudioSource.PlayOneShot(m_Voice_Kiino, 0.6f);
+                m_SFXAudioSource.PlayOneShot(m_Voice_Kiino, 0.7f);
                 break;
         }
     }
