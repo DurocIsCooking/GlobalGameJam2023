@@ -133,6 +133,7 @@ public class GlyphPuzzle : MonoBehaviour
         {
             // Add items
             InventoryManager.Instance.AddItem(MusicSheet2.Item);
+            PianoPuzzle.Instance.ScoreFound(2);
             // Switch safe triggers
             m_ClockGameObject.transform.GetChild(0).gameObject.SetActive(false);
             m_ClockGameObject.transform.GetChild(1).gameObject.SetActive(true);
