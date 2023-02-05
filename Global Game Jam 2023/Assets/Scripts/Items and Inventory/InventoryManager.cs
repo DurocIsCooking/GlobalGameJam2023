@@ -41,6 +41,8 @@ public class InventoryManager : MonoBehaviour
     private List<ItemSlot> _itemSlots = new List<ItemSlot>();
     [SerializeField] private int _numItemSlots;
 
+    public PianoPuzzle PianoManager;
+
     // UI
     [Header("UI")]
     [SerializeField] private GameObject _canvas;
@@ -96,6 +98,13 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Item item)
     {
+
+        if(item.Name.Contains("Music Sheet"))
+        {
+            char lastCharacter = item.Name[item.Name.Length - 1];
+            PianoManager.ScoreFound(lastCharacter);
+        }
+
         Debug.Log("Adding item");
         foreach (ItemSlot itemSlot in _itemSlots)
         {

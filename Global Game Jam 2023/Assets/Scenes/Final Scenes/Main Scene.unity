@@ -1312,7 +1312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Name
-      value: Music Sheet
+      value: Music Sheet 2
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Sprite
@@ -1711,6 +1711,7 @@ MonoBehaviour:
   ItemSlotPrefab: {fileID: 8644849462567992724, guid: 52d1c6f9536e3dc4e93645d284b1ed41, type: 3}
   ItemInUse: {fileID: 0}
   _numItemSlots: 10
+  PianoManager: {fileID: 0}
   _canvas: {fileID: 310474013}
   SpriteScale: 0.4
   _firstItemPosition: {x: 11.6, y: 7.2}
@@ -3431,15 +3432,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685401, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.6
+      value: 6.34
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685401, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.72
+      value: 6.55
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Name
-      value: Music Sheet
+      value: Music Sheet 1
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Sprite
@@ -6586,6 +6587,36 @@ MonoBehaviour:
     Sentences:
     - Huh, this looks familiar... The caterpillar is blocking the first half of the
       code.
+--- !u!114 &1319198881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319198879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 0
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1319198880}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1321696777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,7 +6821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Name
-      value: Music Sheet
+      value: Music Sheet 3
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Sprite
@@ -7034,7 +7065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Name
-      value: Music Sheet
+      value: Music Sheet 4
       objectReference: {fileID: 0}
     - target: {fileID: 4309433625461685414, guid: 19b02edfcae685e43bbac5ad958c97a1, type: 3}
       propertyPath: Item.Sprite
@@ -8543,6 +8574,36 @@ MonoBehaviour:
       - m_Target: {fileID: 1754832213}
         m_TargetAssemblyTypeName: EnableWaterspout, Assembly-CSharp
         m_MethodName: ActivateWaterspoutCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1754832215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754832206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aa88f7b87a6140aa536f61fe51e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 2
+  TriggeringItemName: 
+  DestroyItemOnClick: 0
+  EventToTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1754832212}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

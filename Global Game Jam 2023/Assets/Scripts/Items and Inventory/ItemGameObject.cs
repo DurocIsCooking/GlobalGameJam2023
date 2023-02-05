@@ -29,6 +29,7 @@ public class ItemGameObject : MonoBehaviour, IClickable
         {
             return;
         }
+        AudioManager.Instance.PlaySFX("Pickup");
         InventoryManager.Instance.AddItem(Item);
         OnDestroy();
     }
